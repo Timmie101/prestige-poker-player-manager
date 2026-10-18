@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "Prestige Poker Player Manager",
+  "short_name": "Prestige Poker",
+  "description": "Offline poker tournament player and table manager.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape-primary",
+  "background_color": "#0d1311",
+  "theme_color": "#101815",
+  "icons": [
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"icons/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}
