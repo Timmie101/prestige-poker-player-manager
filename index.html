@@ -34,6 +34,12 @@
 .new-table-row>div{display:flex;min-width:0}
 .new-table-row #newTableStatus{margin:0;width:100%;display:flex;align-items:center;min-height:48px}
 .new-table-row #openTableBtn{align-self:stretch;min-height:48px}
+
+/* Keep the setup action on the same row, aligned with the three inputs. */
+.setup-grid>.setup-action{grid-column:auto;display:flex;flex-direction:column;min-width:0}
+.setup-grid>.setup-action label{display:block}
+.setup-grid #applySetup{height:48px;min-height:48px;width:100%;box-sizing:border-box;white-space:nowrap;padding:0 10px}
+@media(max-width:640px){.setup-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.setup-grid>div:last-child{grid-column:auto}.setup-grid>.setup-action{grid-column:auto}}
 </style>
 </head>
 <body>
@@ -54,10 +60,10 @@
     <div><label for="tables">Starting tables</label><select id="tables"></select></div>
     <div><label for="seats">Seats per table</label><select id="seats"></select></div>
     <div><label for="tournamentName">Tournament name (optional)</label><input id="tournamentName" placeholder="Friday Night Poker"></div>
+    <div class="setup-action"><label for="applySetup">&nbsp;</label><button class="primary" id="applySetup" type="button">Apply setup changes</button></div>
   </div>
   <p class="small">Break thresholds are calculated automatically from seats per table. For 9 seats: 27 players = 3 tables, 18 = 2 tables, 9 = final table.</p>
   <div class="notice" id="thresholdNotice">Thresholds will appear here.</div>
-  <button class="ghost" id="applySetup">Apply setup changes</button>
 </section>
 <section class="panel">
   <h2>2 · Register a player</h2>
@@ -112,6 +118,15 @@
 <div class="footer">Single-device prototype · Your tournament data is saved locally in this browser.</div>
 </div>
 
+<div id="tableBalanceAlertModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="tableBalanceAlertTitle" aria-describedby="tableBalanceAlertMessage">
+  <div class="name-modal">
+    <h2 id="tableBalanceAlertTitle">Table Balancing Required</h2>
+    <p id="tableBalanceAlertMessage"></p>
+    <div class="modal-actions">
+      <button type="button" class="primary" id="tableBalanceAlertOK">OK</button>
+    </div>
+  </div>
+</div>
 <div id="resetTournamentModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="resetTournamentTitle" aria-describedby="resetTournamentMessage">
   <div class="name-modal">
     <h2 id="resetTournamentTitle">Reset Tournament</h2>
@@ -187,7 +202,7 @@ function render(){
  const grid=$('tableGrid');grid.innerHTML='';
  for(let t=1;t<=state.activeTables;t++){
    const people=onTable(t),card=document.createElement('div');card.className='table-card';
-   card.innerHTML=`<div class="table-head"><h3>Table ${t}</h3><span class="pill ${people.length>0&&people.length<=state.seatsPerTable?'alert':''}">${people.length}/${state.seatsPerTable} players</span></div><div class="seat-list"></div><div class="table-actions"><button data-table="${t}" class="shuffleTable">Randomise seats</button></div>`;
+   card.innerHTML=`<div class="table-head"><h3>Table ${t}</h3><span class="pill ${people.length>0&&people.length<=state.seatsPerTable?'alert':''}">${people.length}/${state.seatsPerTable} players</span></div><div class="seat-list"></div>`;
    const list=card.querySelector('.seat-list');
    for(let s=1;s<=state.seatsPerTable;s++){
     const p=people.find(x=>x.seat===s),row=document.createElement('div');row.className='seat'+(p?'':' empty');
@@ -198,7 +213,7 @@ function render(){
  }
  grid.querySelectorAll('.bust').forEach(btn=>btn.addEventListener('click',()=>bustPlayer(Number(btn.dataset.id))));
  grid.querySelectorAll('.edit-name').forEach(btn=>btn.addEventListener('click',()=>editPlayerName(Number(btn.dataset.id))));
- grid.querySelectorAll('.shuffleTable').forEach(btn=>btn.addEventListener('click',()=>randomiseSingleTable(Number(btn.dataset.table))));
+
  renderBalance();renderBreak();renderBusted();renderNewTable();save();
 }
 function renderBreak(){
@@ -237,7 +252,14 @@ async function saveEditedPlayerName(){
  msg(`Player name changed from "${old}" to "${name}" at Table ${p.table}, Seat ${p.seat}.`);render();
 }
 
-function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p)return;const name=p.name,table=p.table,seat=p.seat;p.active=false;p.bustedAt=new Date().toISOString();p.bustOrder=Math.max(0,...state.players.map(player=>Number(player.bustOrder)||0))+1;state.history.push({action:'bust',name:p.name,table:p.table,seat:p.seat});proposed=null;proposedBalance=null;lastBustMessage=`${name} has busted out from Table ${table}, Seat ${seat}.`;msg(lastBustMessage);render();}
+function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p)return;const name=p.name,table=p.table,seat=p.seat;p.active=false;p.bustedAt=new Date().toISOString();p.bustOrder=Math.max(0,...state.players.map(player=>Number(player.bustOrder)||0))+1;state.history.push({action:'bust',name:p.name,table:p.table,seat:p.seat});proposed=null;proposedBalance=null;lastBustMessage=`${name} has busted out from Table ${table}, Seat ${seat}.`;msg(lastBustMessage);render();
+ const counts=tableCounts(),max=Math.max(0,...counts.map(x=>x.count)),min=Math.min(...counts.map(x=>x.count));
+ if(state.activeTables>1&&max-min>1&&!$('balanceControls').classList.contains('hidden')){
+   $('tableBalanceAlertMessage').textContent=`${name} has busted out. Tables now need balancing. Current table counts: ${counts.map(x=>`T${x.table}: ${x.count}`).join(' · ')}. Use the Table balance after bust-outs section to move a player.`;
+   $('tableBalanceAlertModal').classList.remove('hidden');
+   $('tableBalanceAlertOK').focus();
+ }
+}
 
 function tableCounts(){return Array.from({length:state.activeTables},(_,i)=>({table:i+1,count:onTable(i+1).length}));}
 function renderBalance(){
@@ -385,6 +407,7 @@ function randomiseSingleTable(t){const ps=onTable(t);const seats=shuffle(Array.f
 function refreshRestoreSeats(id,preferredSeat){const tableEl=$(`restoreTable-${id}`),seatEl=$(`restoreSeat-${id}`);if(!tableEl||!seatEl)return;const table=Number(tableEl.value);const current=Number(preferredSeat??seatEl.value);seatEl.innerHTML='';for(let s=1;s<=state.seatsPerTable;s++){if(!occupied(table,s)){const o=document.createElement('option');o.value=s;o.textContent=`Seat ${s}`;seatEl.appendChild(o);}}if([...seatEl.options].some(o=>Number(o.value)===current))seatEl.value=String(current);if(!seatEl.options.length){const o=document.createElement('option');o.value='';o.textContent='No empty seats';seatEl.appendChild(o);} }
 function restorePlayer(id){const p=state.players.find(x=>x.id===Number(id)&&!x.active);if(!p)return;const table=Number($(`restoreTable-${id}`).value),seat=Number($(`restoreSeat-${id}`).value);if(!table||!seat||occupied(table,seat)){msg('That seat is no longer available. Please choose another empty seat.','error');refreshRestoreSeats(id);return;}p.active=true;p.table=table;p.seat=seat;delete p.bustedAt;state.history.push({action:'restore',name:p.name,table,seat});msg(`${p.name} restored to Table ${table}, Seat ${seat}.`);render();}
 function renderBusted(){const list=$('bustedList'),bs=busted().sort((a,b)=>(Date.parse(b.bustedAt)||0)-(Date.parse(a.bustedAt)||0)||(Number(b.bustOrder)||0)-(Number(a.bustOrder)||0));if(!bs.length){list.innerHTML='<p class="small">No players have busted out yet.</p>';return;}list.innerHTML=bs.map(p=>`<div class="seat" style="margin-bottom:8px;flex-wrap:wrap"><span class="seat-name">${esc(p.name)} <span class="small">· previously T${p.table} S${p.seat}</span></span><div style="display:flex;gap:6px;min-width:230px;flex:1"><select aria-label="Restore ${esc(p.name)} to table" id="restoreTable-${p.id}">${Array.from({length:state.activeTables},(_,i)=>`<option value="${i+1}">Table ${i+1}</option>`).join('')}</select><select aria-label="Restore ${esc(p.name)} to seat" id="restoreSeat-${p.id}"></select><button data-restore="${p.id}">Restore</button></div></div>`).join('');bs.forEach(p=>{const tableEl=$(`restoreTable-${p.id}`);tableEl.value=String(Math.min(p.table,state.activeTables)||1);refreshRestoreSeats(p.id,p.seat);tableEl.addEventListener('change',()=>refreshRestoreSeats(p.id));$(`restoreSeat-${p.id}`).addEventListener('change',()=>{});});list.querySelectorAll('[data-restore]').forEach(btn=>btn.addEventListener('click',()=>restorePlayer(btn.dataset.restore)));}
+$('tableBalanceAlertOK').addEventListener('click',()=>{$('tableBalanceAlertModal').classList.add('hidden');});
 $('playerName').addEventListener('input',e=>{const input=e.target;const start=input.selectionStart;const end=input.selectionEnd;const formatted=String(input.value).replace(/(^|[\s'-])([a-z])/g,(match,prefix,letter)=>prefix+letter.toUpperCase());if(formatted!==input.value){input.value=formatted;input.setSelectionRange(start,end);}});
 $('registerForm').addEventListener('submit',async e=>{e.preventDefault();const input=$('playerName');if(await addPlayer(capitalisePlayerName(input.value))){input.value='';}input.focus();});
 $('duplicatePlayerCancel').addEventListener('click',()=>closeDuplicatePlayerModal(false)); $('duplicatePlayerContinue').addEventListener('click',()=>closeDuplicatePlayerModal(true)); $('duplicatePlayerModal').addEventListener('click',e=>{if(e.target===$('duplicatePlayerModal'))closeDuplicatePlayerModal(false);}); $('editPlayerForm').addEventListener('submit',e=>{e.preventDefault();saveEditedPlayerName();}); $('editPlayerInput').addEventListener('input',e=>{const input=e.target;const start=input.selectionStart;const end=input.selectionEnd;const formatted=capitalisePlayerName(input.value);if(formatted!==input.value){input.value=formatted;input.setSelectionRange(start,end);}});
