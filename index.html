@@ -12,7 +12,28 @@
 <title>Poker Player Manager</title>
 <style>
 :root{color-scheme:dark;--bg:#0d1311;--panel:#17211c;--panel2:#202c25;--line:#35443a;--text:#f3f6f2;--muted:#aebbb1;--green:#63d39a;--gold:#e5c46a;--red:#ff8c83}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#101a15,#0b100e 60%);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--panel2);color:var(--text);font-weight:650;cursor:pointer;touch-action:manipulation}button:active{transform:scale(.99)}button.primary{background:var(--green);border-color:var(--green);color:#092016}button.danger{color:#ffd3cf;border-color:#75403b;background:#3a201e}button.ghost{background:transparent}button:disabled{opacity:.4;cursor:not-allowed}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#0d1511;color:var(--text);min-height:45px}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.app{max-width:1100px;margin:auto;padding:16px 14px 48px}.top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:6px 0 18px}.brand{display:flex;gap:11px;align-items:center}.mark{width:58px;height:58px;flex:0 0 58px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:#050707}.mark img{width:100%;height:100%;object-fit:cover;display:block}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.15em;font-weight:800}.top h1{font-size:22px;margin:3px 0 0}.status{font-size:12px;color:var(--muted);text-align:right}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:13px}.stat span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin-top:4px}.panel{padding:15px;margin-bottom:13px}.panel h2{font-size:17px;margin:0 0 13px}.setup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.register{display:grid;grid-template-columns:1fr auto;gap:8px}.small{font-size:12px;color:var(--muted);line-height:1.45}.notice{padding:12px;border-radius:12px;background:#10291e;border:1px solid #27543c;color:#d4f8e3;margin:12px 0;font-size:14px}.notice.warn{background:#322918;border-color:#66552d;color:#ffedbd}.notice.error{background:#351f1d;border-color:#6c3934;color:#ffd7d3}.table-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.table-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#131b16}.table-head{padding:12px;background:#202d25;display:flex;justify-content:space-between;align-items:center;gap:8px}.table-head h3{margin:0;font-size:16px}.pill{font-size:11px;border:1px solid #4b6554;color:#d1e8d7;border-radius:30px;padding:4px 8px;white-space:nowrap}.pill.alert{border-color:#8c7436;color:#ffdf83}.seat-list{padding:7px;display:grid;gap:5px}.seat{display:flex;align-items:center;gap:8px;min-height:42px;padding:6px 8px;border:1px solid #2c3b31;border-radius:10px}.seat-num{width:28px;height:28px;border-radius:8px;background:#27342b;display:grid;place-items:center;font-size:12px;color:#d2dfd5;flex-shrink:0}.seat-name{flex:1;overflow-wrap:anywhere;font-size:14px}.seat.empty .seat-name{color:#68766c}.seat .bust{border:0;background:transparent;padding:5px;color:var(--red);font-size:17px}.table-actions{padding:0 8px 9px;display:flex;gap:6px}.table-actions button{font-size:12px;padding:8px;flex:1}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions button{flex:1}.moves{border-collapse:collapse;width:100%;font-size:14px}.moves th,.moves td{text-align:left;padding:9px 5px;border-bottom:1px solid var(--line)}.moves th{color:var(--muted);font-size:12px}.hidden{display:none!important}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.section-title h2{margin:0}.footer{text-align:center;color:var(--muted);font-size:12px;padding:14px}.tag{font-size:11px;color:var(--muted)}@media(max-width:650px){.app{padding:12px 10px 34px}.stats{grid-template-columns:repeat(2,1fr)}.setup-grid{grid-template-columns:1fr 1fr}.setup-grid>div:last-child{grid-column:1/-1}.table-grid{grid-template-columns:1fr}.top h1{font-size:19px}.status{max-width:100px}.panel{padding:12px}.stat strong{font-size:24px}}@media(min-width:900px){.table-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#101a15,#0b100e 60%);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--panel2);color:var(--text);font-weight:650;cursor:pointer;touch-action:manipulation}button:active{transform:scale(.99)}button.primary{background:var(--green);border-color:var(--green);color:#092016}button.danger{color:#ffd3cf;border-color:#75403b;background:#3a201e}button.ghost{background:transparent}button:disabled{opacity:.4;cursor:not-allowed}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#0d1511;color:var(--text);min-height:45px}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.app{max-width:1100px;margin:auto;padding:16px 14px 48px}.top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:6px 0 18px}.brand{display:flex;gap:11px;align-items:center}.mark{width:58px;height:58px;flex:0 0 58px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:#050707}.mark img{width:100%;height:100%;object-fit:cover;display:block}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.15em;font-weight:800}.top h1{font-size:22px;margin:3px 0 0}.status{font-size:12px;color:var(--muted);text-align:right}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:13px}.stat span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin-top:4px}.panel{padding:15px;margin-bottom:13px}.panel h2{font-size:17px;margin:0 0 13px}.setup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.register{display:grid;grid-template-columns:1fr auto;gap:8px}.small{font-size:12px;color:var(--muted);line-height:1.45}.notice{padding:12px;border-radius:12px;background:#10291e;border:1px solid #27543c;color:#d4f8e3;margin:12px 0;font-size:14px}.notice.warn{background:#322918;border-color:#66552d;color:#ffedbd}.notice.error{background:#351f1d;border-color:#6c3934;color:#ffd7d3}.table-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.table-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#131b16}.table-head{padding:12px;background:#202d25;display:flex;justify-content:space-between;align-items:center;gap:8px}.table-head h3{margin:0;font-size:16px}.pill{font-size:11px;border:1px solid #4b6554;color:#d1e8d7;border-radius:30px;padding:4px 8px;white-space:nowrap}.pill.alert{border-color:#8c7436;color:#ffdf83}.seat-list{padding:7px;display:grid;gap:5px}.seat{display:flex;align-items:center;gap:8px;min-height:42px;padding:6px 8px;border:1px solid #2c3b31;border-radius:10px}.seat-num{width:28px;height:28px;border-radius:8px;background:#27342b;display:grid;place-items:center;font-size:12px;color:#d2dfd5;flex-shrink:0}.seat-name{flex:1;overflow-wrap:anywhere;font-size:16px;line-height:1.2;min-width:0}.seat.empty .seat-name{color:#68766c}.seat .bust{border:0;background:transparent;padding:5px;color:var(--red);font-size:17px}.table-actions{padding:0 8px 9px;display:flex;gap:6px}.table-actions button{font-size:12px;padding:8px;flex:1}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions button{flex:1}.moves{border-collapse:collapse;width:100%;font-size:14px}.moves th,.moves td{text-align:left;padding:9px 5px;border-bottom:1px solid var(--line)}.moves th{color:var(--muted);font-size:12px}.hidden{display:none!important}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.section-title h2{margin:0}.footer{text-align:center;color:var(--muted);font-size:12px;padding:14px}.tag{font-size:11px;color:var(--muted)}@media(max-width:650px){.app{padding:12px 10px 34px}.stats{grid-template-columns:repeat(2,1fr)}.setup-grid{grid-template-columns:1fr 1fr}.setup-grid>div:last-child{grid-column:1/-1}.table-grid{grid-template-columns:1fr}.top h1{font-size:19px}.status{max-width:100px}.panel{padding:12px}.stat strong{font-size:24px}}@media(min-width:900px){.table-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.name-modal-backdrop{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px}
+.name-modal-backdrop.hidden{display:none!important}
+.name-modal{width:min(100%,420px);background:#17231b;border:1px solid #45634e;border-radius:18px;padding:20px;box-shadow:0 20px 70px #0009}
+.name-modal h2{font-size:19px;margin:0 0 14px}
+.name-modal .modal-actions{display:flex;gap:8px;margin-top:14px}
+.name-modal .modal-actions button{flex:1}
+.name-modal input{margin-top:6px}
+.seat .seat-num,.seat .edit-name,.seat .bust{width:40px;height:40px;min-width:40px;flex:0 0 40px;border-radius:10px;display:grid;place-items:center;padding:0}
+.seat .seat-num{background:#27342b;font-size:24px;color:#d2dfd5}
+.seat .edit-name{width:40px;height:40px;min-width:40px;flex:0 0 40px;border:1px solid #3d6794;background:#1c3550;color:#d6eaff;font-size:22px;font-weight:800;border-radius:10px}
+.seat .bust{border:1px solid #75403b;background:#3a201e;color:#ffd3cf;font-size:30px;font-weight:850;font-family:inherit;line-height:1}
+
+/* iPad-consistent setup field sizing */
+.setup-grid input,.setup-grid select{height:48px;min-height:48px;width:100%;box-sizing:border-box;font-size:16px;line-height:normal}
+.setup-grid select{-webkit-appearance:none;appearance:none;padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'%3E%3Cpath d='m2 2 6 6 6-6' fill='none' stroke='%23aebbb1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+/* Align the new-table status and action at every screen width */
+.new-table-row{align-items:stretch}
+.new-table-row>div{display:flex;min-width:0}
+.new-table-row #newTableStatus{margin:0;width:100%;display:flex;align-items:center;min-height:48px}
+.new-table-row #openTableBtn{align-self:stretch;min-height:48px}
 </style>
 </head>
 <body>
@@ -51,7 +72,7 @@
 <section class="panel">
   <h2>4 · Open an additional table</h2>
   <p class="small">Open another table during the tournament, select which players to move, and the manager will assign each a random available seat. Moves are previewed before they are applied.</p>
-  <div class="row" style="margin-bottom:10px"><div style="flex:1"><div id="newTableStatus" class="notice">Open a new table when you need extra capacity.</div></div><button id="openTableBtn" class="primary" style="align-self:start">＋ Open new table</button></div><div class="actions" style="margin-bottom:10px"><button id="closeEmptyNewTableBtn" class="danger hidden">Close new table (empty)</button></div>
+  <div class="row new-table-row" style="margin-bottom:10px"><div style="flex:1"><div id="newTableStatus" class="notice">Open a new table when you need extra capacity.</div></div><button id="openTableBtn" class="primary">＋ Open new table</button></div><div class="actions" style="margin-bottom:10px"><button id="closeEmptyNewTableBtn" class="danger hidden">Close new table (empty)</button></div>
   <div id="newTableControls" class="hidden">
     <div id="newTablePlayerList"></div>
     <div class="actions" style="margin-top:10px"><button id="previewNewTableMoves" class="primary">Preview selected moves</button><button id="cancelNewTableMoves" class="ghost">Cancel selection</button></div>
@@ -90,6 +111,50 @@
 <div class="actions"><button id="exportCsv">Export player list (CSV)</button><button id="reset" class="danger">Reset tournament</button></div>
 <div class="footer">Single-device prototype · Your tournament data is saved locally in this browser.</div>
 </div>
+
+<div id="resetTournamentModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="resetTournamentTitle" aria-describedby="resetTournamentMessage">
+  <div class="name-modal">
+    <h2 id="resetTournamentTitle">Reset Tournament</h2>
+    <p id="resetTournamentMessage">Reset this tournament and delete all saved player data from this browser? This cannot be undone.</p>
+    <div class="modal-actions">
+      <button type="button" id="resetTournamentCancel">Cancel</button>
+      <button type="button" class="danger" id="resetTournamentConfirm">Reset Tournament</button>
+    </div>
+  </div>
+</div>
+<div id="closeEmptyTableModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="closeEmptyTableTitle">
+  <div class="name-modal">
+    <h2 id="closeEmptyTableTitle">Close New Table</h2>
+    <p id="closeEmptyTableMessage"></p>
+    <div class="modal-actions">
+      <button type="button" id="closeEmptyTableCancel">Cancel</button>
+      <button type="button" class="primary" id="closeEmptyTableConfirm">Close Table</button>
+    </div>
+  </div>
+</div>
+<div id="duplicatePlayerModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="duplicatePlayerTitle">
+  <div class="name-modal">
+    <h2 id="duplicatePlayerTitle">Name already in use</h2>
+    <p id="duplicatePlayerMessage"></p>
+    <div class="modal-actions">
+      <button type="button" id="duplicatePlayerCancel">Cancel</button>
+      <button type="button" class="primary" id="duplicatePlayerContinue">Continue</button>
+    </div>
+  </div>
+</div>
+<div id="editPlayerModal" class="name-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="editPlayerTitle">
+  <div class="name-modal">
+    <h2 id="editPlayerTitle">Edit Player</h2>
+    <form id="editPlayerForm">
+      <label for="editPlayerInput">Player name</label>
+      <input id="editPlayerInput" autocomplete="off" required>
+      <div class="modal-actions">
+        <button type="button" class="ghost" id="editPlayerCancel">Cancel</button>
+        <button type="submit" class="primary">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
 <script>
 (() => {
 const $=id=>document.getElementById(id);
@@ -126,7 +191,7 @@ function render(){
    const list=card.querySelector('.seat-list');
    for(let s=1;s<=state.seatsPerTable;s++){
     const p=people.find(x=>x.seat===s),row=document.createElement('div');row.className='seat'+(p?'':' empty');
-    row.innerHTML=`<span class="seat-num">${s}</span><span class="seat-name">${p?esc(p.name):'Empty seat'}</span>${p?`<button class="edit-name" data-id="${p.id}" aria-label="Edit name for ${esc(p.name)}" title="Edit player name">✎</button><button class="bust" data-id="${p.id}" aria-label="Bust out ${esc(p.name)}" title="Mark busted out">×</button>`:''}`;
+    row.innerHTML=`<span class="seat-num">${s}</span><span class="seat-name">${p?esc(p.name):'Empty seat'}</span>${p?`<button class="edit-name" data-id="${p.id}" aria-label="Edit name for ${esc(p.name)}" title="Edit player name">✎</button><button class="bust" data-id="${p.id}" aria-label="Bust out ${esc(p.name)}" title="Mark busted out">X</button>`:''}`;
     list.appendChild(row);
    }
    grid.appendChild(card);
@@ -147,18 +212,32 @@ function renderBreak(){
  for(let t=1;t<=state.activeTables;t++){const o=document.createElement('option');o.value=t;o.textContent=`Table ${t} (${onTable(t).length} players)`;sel.appendChild(o);}
  if([...sel.options].some(o=>o.value===old))sel.value=old;
 }
+let editingPlayerId=null;
+let editPlayerResolver=null;
+function closeEditPlayerModal(result=null){
+ $('editPlayerModal').classList.add('hidden');
+ editingPlayerId=null;
+ if(editPlayerResolver){const resolve=editPlayerResolver;editPlayerResolver=null;resolve(result);}
+}
 function editPlayerName(id){
  const p=state.players.find(x=>x.id===id);if(!p)return;
- const updated=prompt(`Edit name for Table ${p.table}, Seat ${p.seat}:`,p.name);
- if(updated===null)return;
- const name=updated.trim();if(!name){msg('Player name cannot be blank. No changes made.','error');return;}
+ editingPlayerId=id;
+ $('editPlayerInput').value=capitalisePlayerName(p.name);
+ $('editPlayerModal').classList.remove('hidden');
+ $('editPlayerInput').focus();
+ $('editPlayerInput').select();
+}
+async function saveEditedPlayerName(){
+ const p=state.players.find(x=>x.id===editingPlayerId);if(!p){closeEditPlayerModal();return;}
+ const name=capitalisePlayerName($('editPlayerInput').value);if(!name){msg('Player name cannot be blank. No changes made.','error');$('editPlayerInput').focus();return;}
  const duplicate=state.players.find(x=>x.id!==p.id&&x.name.trim().toLocaleLowerCase()===name.toLocaleLowerCase());
- if(duplicate&&!confirm(`Another player is already named "${duplicate.name}"${duplicate.active?` (Table ${duplicate.table}, Seat ${duplicate.seat})`:' (busted out)'}. Save this name anyway?`))return;
+ if(duplicate&&!await confirmDuplicatePlayer(`Another player is already named "${duplicate.name}"${duplicate.active?` (Table ${duplicate.table}, Seat ${duplicate.seat})`:' (busted out)'}. Save this name anyway?`))return;
  const old=p.name;p.name=name;state.history.push({action:'rename',id:p.id,oldName:old,name,table:p.table,seat:p.seat,at:new Date().toISOString()});
+ closeEditPlayerModal();
  msg(`Player name changed from "${old}" to "${name}" at Table ${p.table}, Seat ${p.seat}.`);render();
 }
 
-function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p)return;const name=p.name,table=p.table,seat=p.seat;p.active=false;p.bustedAt=new Date().toISOString();state.history.push({action:'bust',name:p.name,table:p.table,seat:p.seat});proposed=null;proposedBalance=null;lastBustMessage=`${name} has busted out from Table ${table}, Seat ${seat}.`;msg(lastBustMessage);render();}
+function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p)return;const name=p.name,table=p.table,seat=p.seat;p.active=false;p.bustedAt=new Date().toISOString();p.bustOrder=Math.max(0,...state.players.map(player=>Number(player.bustOrder)||0))+1;state.history.push({action:'bust',name:p.name,table:p.table,seat:p.seat});proposed=null;proposedBalance=null;lastBustMessage=`${name} has busted out from Table ${table}, Seat ${seat}.`;msg(lastBustMessage);render();}
 
 function tableCounts(){return Array.from({length:state.activeTables},(_,i)=>({table:i+1,count:onTable(i+1).length}));}
 function renderBalance(){
@@ -189,9 +268,19 @@ function prepareBalance(){const id=Number($('balancePlayer').value),toTable=Numb
 function confirmBalance(){if(!proposedBalance)return;const m=proposedBalance,p=state.players.find(x=>x.id===m.id&&x.active);if(!p){cancelBalance();return;}p.table=m.toTable;p.seat=m.toSeat;state.history.push({action:'balance-move',name:p.name,fromTable:m.fromTable,fromSeat:m.fromSeat,toTable:m.toTable,toSeat:m.toSeat});lastBustMessage=`Balance update: ${p.name} moved from Table ${m.fromTable} to Table ${m.toTable} after a bust-out.`;proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;msg(lastBustMessage);render();}
 function cancelBalance(){proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;msg('Player move cancelled. No seating changes made.');}
 
-function addPlayer(name){name=name.trim();if(!name)return false;const duplicate=state.players.find(p=>p.name.trim().toLocaleLowerCase()===name.toLocaleLowerCase());if(duplicate&&!confirm(`Warning: a player named "${duplicate.name}" already exists${duplicate.active?` (Table ${duplicate.table}, Seat ${duplicate.seat})`:' (busted out)'}.
-
-Choose OK to add another player with this name, or Cancel to return to the name field and change it (for example, add a surname or initial).`))return false;const max=state.activeTables*state.seatsPerTable;if(active().length>=max){msg('All active seats are occupied. Increase the number of tables or record a bust-out first.','error');return false;}
+function capitalisePlayerName(value){return String(value||'').trim().replace(/(^|[\s'-])([a-z])/g,(match,prefix,letter)=>prefix+letter.toUpperCase());}
+let duplicatePlayerResolver=null;
+function closeDuplicatePlayerModal(accepted){
+  $('duplicatePlayerModal').classList.add('hidden');
+  if(duplicatePlayerResolver){const resolve=duplicatePlayerResolver;duplicatePlayerResolver=null;resolve(accepted);}
+}
+function confirmDuplicatePlayer(message){
+  $('duplicatePlayerMessage').textContent=message;
+  $('duplicatePlayerModal').classList.remove('hidden');
+  $('duplicatePlayerCancel').focus();
+  return new Promise(resolve=>{duplicatePlayerResolver=resolve;});
+}
+async function addPlayer(name){name=name.trim();if(!name)return false;const duplicate=state.players.find(p=>p.name.trim().toLocaleLowerCase()===name.toLocaleLowerCase());if(duplicate&&!await confirmDuplicatePlayer(`A player named "${duplicate.name}" already exists${duplicate.active?` (Table ${duplicate.table}, Seat ${duplicate.seat})`:' (busted out)'}. Do you want to add another player with the same name?`))return false;const max=state.activeTables*state.seatsPerTable;if(active().length>=max){msg('All active seats are occupied. Increase the number of tables or record a bust-out first.','error');return false;}
  const counts=tableCounts();const leastCount=Math.min(...counts.map(t=>t.count));
  // Keep tables as even as possible: only consider currently least-populated tables,
  // then randomly choose an empty seat among those tables.
@@ -258,7 +347,18 @@ function closeEmptyNewTable(){
  const table=state.activeTables;
  if(table<=1){msg('The only table cannot be closed.','error');return;}
  if(onTable(table).length){msg(`Table ${table} has players assigned. Move them elsewhere before closing it.`,'error');return;}
- if(!confirm(`Close empty Table ${table}? No players will be moved.`))return;
+ $('closeEmptyTableMessage').textContent=`Close empty Table ${table}? No players will be moved.`;
+ $('closeEmptyTableModal').classList.remove('hidden');
+ $('closeEmptyTableCancel').focus();
+ return;
+}
+function dismissCloseEmptyTableModal(){
+ $('closeEmptyTableModal').classList.add('hidden');
+}
+function confirmCloseEmptyTable(){
+ dismissCloseEmptyTableModal();
+ const table=state.activeTables;
+ if(table<=1 || onTable(table).length){msg('This table can no longer be closed because its status has changed.','error');return;}
  state.activeTables--;
  state.closedTables=[...new Set([...(state.closedTables||[]),table])];
  state.history.push({action:'close-empty-table',table});
@@ -284,14 +384,23 @@ function cancelNewTableMoves(){newTableOpened=false;newTableProposal=null;$('new
 function randomiseSingleTable(t){const ps=onTable(t);const seats=shuffle(Array.from({length:state.seatsPerTable},(_,i)=>i+1));ps.forEach((p,i)=>p.seat=seats[i]);msg(`Seats randomised at Table ${t}.`);render();}
 function refreshRestoreSeats(id,preferredSeat){const tableEl=$(`restoreTable-${id}`),seatEl=$(`restoreSeat-${id}`);if(!tableEl||!seatEl)return;const table=Number(tableEl.value);const current=Number(preferredSeat??seatEl.value);seatEl.innerHTML='';for(let s=1;s<=state.seatsPerTable;s++){if(!occupied(table,s)){const o=document.createElement('option');o.value=s;o.textContent=`Seat ${s}`;seatEl.appendChild(o);}}if([...seatEl.options].some(o=>Number(o.value)===current))seatEl.value=String(current);if(!seatEl.options.length){const o=document.createElement('option');o.value='';o.textContent='No empty seats';seatEl.appendChild(o);} }
 function restorePlayer(id){const p=state.players.find(x=>x.id===Number(id)&&!x.active);if(!p)return;const table=Number($(`restoreTable-${id}`).value),seat=Number($(`restoreSeat-${id}`).value);if(!table||!seat||occupied(table,seat)){msg('That seat is no longer available. Please choose another empty seat.','error');refreshRestoreSeats(id);return;}p.active=true;p.table=table;p.seat=seat;delete p.bustedAt;state.history.push({action:'restore',name:p.name,table,seat});msg(`${p.name} restored to Table ${table}, Seat ${seat}.`);render();}
-function renderBusted(){const list=$('bustedList'),bs=busted();if(!bs.length){list.innerHTML='<p class="small">No players have busted out yet.</p>';return;}list.innerHTML=bs.map(p=>`<div class="seat" style="margin-bottom:8px;flex-wrap:wrap"><span class="seat-name">${esc(p.name)} <span class="small">· previously T${p.table} S${p.seat}</span></span><div style="display:flex;gap:6px;min-width:230px;flex:1"><select aria-label="Restore ${esc(p.name)} to table" id="restoreTable-${p.id}">${Array.from({length:state.activeTables},(_,i)=>`<option value="${i+1}">Table ${i+1}</option>`).join('')}</select><select aria-label="Restore ${esc(p.name)} to seat" id="restoreSeat-${p.id}"></select><button data-restore="${p.id}">Restore</button></div></div>`).join('');bs.forEach(p=>{const tableEl=$(`restoreTable-${p.id}`);tableEl.value=String(Math.min(p.table,state.activeTables)||1);refreshRestoreSeats(p.id,p.seat);tableEl.addEventListener('change',()=>refreshRestoreSeats(p.id));$(`restoreSeat-${p.id}`).addEventListener('change',()=>{});});list.querySelectorAll('[data-restore]').forEach(btn=>btn.addEventListener('click',()=>restorePlayer(btn.dataset.restore)));}
-$('registerForm').addEventListener('submit',e=>{e.preventDefault();const input=$('playerName');if(addPlayer(input.value)){input.value='';}input.focus();});
+function renderBusted(){const list=$('bustedList'),bs=busted().sort((a,b)=>(Date.parse(b.bustedAt)||0)-(Date.parse(a.bustedAt)||0)||(Number(b.bustOrder)||0)-(Number(a.bustOrder)||0));if(!bs.length){list.innerHTML='<p class="small">No players have busted out yet.</p>';return;}list.innerHTML=bs.map(p=>`<div class="seat" style="margin-bottom:8px;flex-wrap:wrap"><span class="seat-name">${esc(p.name)} <span class="small">· previously T${p.table} S${p.seat}</span></span><div style="display:flex;gap:6px;min-width:230px;flex:1"><select aria-label="Restore ${esc(p.name)} to table" id="restoreTable-${p.id}">${Array.from({length:state.activeTables},(_,i)=>`<option value="${i+1}">Table ${i+1}</option>`).join('')}</select><select aria-label="Restore ${esc(p.name)} to seat" id="restoreSeat-${p.id}"></select><button data-restore="${p.id}">Restore</button></div></div>`).join('');bs.forEach(p=>{const tableEl=$(`restoreTable-${p.id}`);tableEl.value=String(Math.min(p.table,state.activeTables)||1);refreshRestoreSeats(p.id,p.seat);tableEl.addEventListener('change',()=>refreshRestoreSeats(p.id));$(`restoreSeat-${p.id}`).addEventListener('change',()=>{});});list.querySelectorAll('[data-restore]').forEach(btn=>btn.addEventListener('click',()=>restorePlayer(btn.dataset.restore)));}
+$('playerName').addEventListener('input',e=>{const input=e.target;const start=input.selectionStart;const end=input.selectionEnd;const formatted=String(input.value).replace(/(^|[\s'-])([a-z])/g,(match,prefix,letter)=>prefix+letter.toUpperCase());if(formatted!==input.value){input.value=formatted;input.setSelectionRange(start,end);}});
+$('registerForm').addEventListener('submit',async e=>{e.preventDefault();const input=$('playerName');if(await addPlayer(capitalisePlayerName(input.value))){input.value='';}input.focus();});
+$('duplicatePlayerCancel').addEventListener('click',()=>closeDuplicatePlayerModal(false)); $('duplicatePlayerContinue').addEventListener('click',()=>closeDuplicatePlayerModal(true)); $('duplicatePlayerModal').addEventListener('click',e=>{if(e.target===$('duplicatePlayerModal'))closeDuplicatePlayerModal(false);}); $('editPlayerForm').addEventListener('submit',e=>{e.preventDefault();saveEditedPlayerName();}); $('editPlayerInput').addEventListener('input',e=>{const input=e.target;const start=input.selectionStart;const end=input.selectionEnd;const formatted=capitalisePlayerName(input.value);if(formatted!==input.value){input.value=formatted;input.setSelectionRange(start,end);}});
+$('editPlayerCancel').addEventListener('click',()=>closeEditPlayerModal());
+$('editPlayerModal').addEventListener('click',e=>{if(e.target===$('editPlayerModal'))closeEditPlayerModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('editPlayerModal').classList.contains('hidden'))closeEditPlayerModal();});
 $('applySetup').addEventListener('click',applySetup);$('prepareBalance').addEventListener('click',prepareBalance);$('confirmBalance').addEventListener('click',confirmBalance);$('cancelBalance').addEventListener('click',cancelBalance);$('balancePlayer').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;});$('balanceTarget').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;refreshBalanceSeats();});$('balanceSeat').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;});$('prepareMoves').addEventListener('click',prepareMoves);$('confirmMoves').addEventListener('click',confirmMoves);$('cancelMoves').addEventListener('click',cancelMoves);
 $('breakTable').addEventListener('change',()=>{proposed=null;$('movePreview').innerHTML='';$('confirmMoves').disabled=true;renderBreak();});
 $('toggleBusted').addEventListener('click',()=>{const l=$('bustedList'),hidden=l.classList.toggle('hidden');$('toggleBusted').textContent=hidden?'Show list':'Hide list';});
 $('exportCsv').addEventListener('click',()=>{const rows=[['Name','Status','Table','Seat','Entry'],...state.players.map(p=>[p.name,p.active?'Active':'Busted',p.table,p.seat,p.entry||1])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='poker-player-list.csv';a.click();URL.revokeObjectURL(a.href);});
-$('openTableBtn').addEventListener('click',openAdditionalTable);$('closeEmptyNewTableBtn').addEventListener('click',closeEmptyNewTable);$('previewNewTableMoves').addEventListener('click',previewNewTableMoves);$('confirmNewTableMoves').addEventListener('click',confirmNewTableMoves);$('cancelNewTableMoves').addEventListener('click',cancelNewTableMoves);
-$('reset').addEventListener('click',()=>{if(!confirm('Reset this tournament and delete all saved player data from this browser?'))return;state={configuredTables:1,activeTables:1,seatsPerTable:9,name:'',players:[],nextId:1,closedTables:[],history:[]};proposed=null;initControls();msg('Tournament reset. Ready for a new event.');render();});
+$('closeEmptyTableCancel').addEventListener('click',dismissCloseEmptyTableModal);$('closeEmptyTableConfirm').addEventListener('click',confirmCloseEmptyTable);$('closeEmptyTableModal').addEventListener('click',e=>{if(e.target===$('closeEmptyTableModal'))dismissCloseEmptyTableModal();});$('openTableBtn').addEventListener('click',openAdditionalTable);$('closeEmptyNewTableBtn').addEventListener('click',closeEmptyNewTable);$('previewNewTableMoves').addEventListener('click',previewNewTableMoves);$('confirmNewTableMoves').addEventListener('click',confirmNewTableMoves);$('cancelNewTableMoves').addEventListener('click',cancelNewTableMoves);
+function dismissResetTournamentModal(){$('resetTournamentModal').classList.add('hidden');}
+$('reset').addEventListener('click',()=>{$('resetTournamentModal').classList.remove('hidden');$('resetTournamentCancel').focus();});
+$('resetTournamentCancel').addEventListener('click',dismissResetTournamentModal);
+$('resetTournamentModal').addEventListener('click',e=>{if(e.target===$('resetTournamentModal'))dismissResetTournamentModal();});
+$('resetTournamentConfirm').addEventListener('click',()=>{dismissResetTournamentModal();state={configuredTables:1,activeTables:1,seatsPerTable:9,name:'',players:[],nextId:1,closedTables:[],history:[]};proposed=null;initControls();msg('Tournament reset. Ready for a new event.');render();});
 load();initControls();render();
 if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Offline support registration failed', err))); }
 })();
