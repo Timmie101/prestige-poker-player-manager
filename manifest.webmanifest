@@ -1,7 +1,7 @@
 {
   "id": "./",
   "name": "Prestige Poker Player Manager",
-  "short_name": "Tournament Manager",
+  "short_name": "Tournament",
   "description": "Offline poker tournament player and table manager.",
   "start_url": "./index.html",
   "scope": "./",
