@@ -12,7 +12,7 @@
 <title>Poker Player Manager - Tournament</title>
 <style>
 :root{color-scheme:dark;--bg:#0d1311;--panel:#17211c;--panel2:#202c25;--line:#35443a;--text:#f3f6f2;--muted:#aebbb1;--green:#63d39a;--gold:#e5c46a;--red:#ff8c83}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#101a15,#0b100e 60%);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--panel2);color:var(--text);font-weight:650;cursor:pointer;touch-action:manipulation}button:active{transform:scale(.99)}button.primary{background:var(--green);border-color:var(--green);color:#092016}button.danger{color:#ffd3cf;border-color:#75403b;background:#3a201e}button.ghost{background:transparent}button:disabled{opacity:.4;cursor:not-allowed}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#0d1511;color:var(--text);min-height:45px}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.app{max-width:1100px;margin:auto;padding:16px 14px 48px}.top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:6px 0 18px}.brand{display:flex;gap:11px;align-items:center}.mark{width:58px;height:58px;flex:0 0 58px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:#050707}.mark img{width:100%;height:100%;object-fit:cover;display:block}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.15em;font-weight:800}.top h1{font-size:22px;margin:3px 0 0}.status{font-size:12px;color:var(--muted);text-align:right}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:13px}.stat span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin-top:4px}.panel{padding:15px;margin-bottom:13px}.panel h2{font-size:17px;margin:0 0 13px}.setup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.register{display:grid;grid-template-columns:1fr auto;gap:8px}.small{font-size:12px;color:var(--muted);line-height:1.45}.notice{padding:12px;border-radius:12px;background:#10291e;border:1px solid #27543c;color:#d4f8e3;margin:12px 0;font-size:14px}.notice.warn{background:#322918;border-color:#66552d;color:#ffedbd}.notice.error{background:#351f1d;border-color:#6c3934;color:#ffd7d3}.table-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.table-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#131b16}.table-head{padding:12px;background:#202d25;display:flex;justify-content:space-between;align-items:center;gap:8px}.table-head h3{margin:0;font-size:16px}.pill{font-size:11px;border:1px solid #4b6554;color:#d1e8d7;border-radius:30px;padding:4px 8px;white-space:nowrap}.pill.alert{border-color:#8c7436;color:#ffdf83}.seat-list{padding:7px;display:grid;gap:5px}.seat{display:flex;align-items:center;gap:8px;min-height:42px;padding:6px 8px;border:1px solid #2c3b31;border-radius:10px}.seat-num{width:28px;height:28px;border-radius:8px;background:#27342b;display:grid;place-items:center;font-size:12px;color:#d2dfd5;flex-shrink:0}.seat-name{flex:1;overflow-wrap:anywhere;font-size:16px;line-height:1.2;min-width:0}.seat.empty .seat-name{color:#68766c}.seat .bust{border:0;background:transparent;padding:5px;color:var(--red);font-size:17px}.table-actions{padding:0 8px 9px;display:flex;gap:6px}.table-actions button{font-size:12px;padding:8px;flex:1}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions button{flex:1}.moves{border-collapse:collapse;width:100%;font-size:14px}.moves th,.moves td{text-align:left;padding:9px 5px;border-bottom:1px solid var(--line)}.moves th{color:var(--muted);font-size:12px}.hidden{display:none!important}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.section-title h2{margin:0}.footer{text-align:center;color:var(--muted);font-size:12px;padding:14px}.tag{font-size:11px;color:var(--muted)}@media(max-width:650px){.app{padding:12px 10px 34px}.stats{grid-template-columns:repeat(2,1fr)}.setup-grid{grid-template-columns:1fr 1fr}.setup-grid>div:last-child{grid-column:1/-1}.table-grid{grid-template-columns:1fr}.top h1{font-size:19px}.status{max-width:100px}.panel{padding:12px}.stat strong{font-size:24px}}@media(min-width:900px){.table-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#101a15,#0b100e 60%);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{border:1px solid var(--line);border-radius:12px;padding:11px 14px;background:var(--panel2);color:var(--text);font-weight:650;cursor:pointer;touch-action:manipulation}button:active{transform:scale(.99)}button.primary{background:var(--green);border-color:var(--green);color:#092016}button.danger{color:#ffd3cf;border-color:#75403b;background:#3a201e}button.ghost{background:transparent}button:disabled{opacity:.4;cursor:not-allowed}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#0d1511;color:var(--text);min-height:45px}label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}.app{max-width:1100px;margin:auto;padding:16px 14px 48px}.top{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:6px 0 18px}.brand{display:flex;gap:11px;align-items:center}.mark{width:58px;height:58px;flex:0 0 58px;border-radius:12px;overflow:hidden;display:grid;place-items:center;background:#050707}.mark img{width:100%;height:100%;object-fit:cover;display:block}.eyebrow{color:var(--green);font-size:11px;letter-spacing:.15em;font-weight:800}.top h1{font-size:22px;margin:3px 0 0}.status{font-size:12px;color:var(--muted);text-align:right}.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin-bottom:14px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:13px}.stat span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin-top:4px}.panel{padding:15px;margin-bottom:13px}.panel h2{font-size:17px;margin:0 0 13px}.setup-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.row{display:flex;gap:8px;align-items:center}.row>*{min-width:0}.register{display:grid;grid-template-columns:1fr auto;gap:8px}.small{font-size:12px;color:var(--muted);line-height:1.45}.notice{padding:12px;border-radius:12px;background:#10291e;border:1px solid #27543c;color:#d4f8e3;margin:12px 0;font-size:14px}.notice.warn{background:#322918;border-color:#66552d;color:#ffedbd}.notice.error{background:#351f1d;border-color:#6c3934;color:#ffd7d3}.table-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.table-card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#131b16}.table-head{padding:12px;background:#202d25;display:flex;justify-content:space-between;align-items:center;gap:8px}.table-head h3{margin:0;font-size:16px}.pill{font-size:11px;border:1px solid #4b6554;color:#d1e8d7;border-radius:30px;padding:4px 8px;white-space:nowrap}.pill.alert{border-color:#8c7436;color:#ffdf83}.seat-list{padding:7px;display:grid;gap:5px}.seat{display:flex;align-items:center;gap:8px;min-height:42px;padding:6px 8px;border:1px solid #2c3b31;border-radius:10px}.seat-num{width:28px;height:28px;border-radius:8px;background:#27342b;display:grid;place-items:center;font-size:12px;color:#d2dfd5;flex-shrink:0}.seat-name{flex:1;overflow-wrap:anywhere;font-size:16px;line-height:1.2;min-width:0}.seat.empty .seat-name{color:#68766c}.seat .bust{border:0;background:transparent;padding:5px;color:var(--red);font-size:17px}.table-actions{padding:0 8px 9px;display:flex;gap:6px}.table-actions button{font-size:12px;padding:8px;flex:1}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions button{flex:1}.moves{border-collapse:collapse;width:100%;font-size:14px}.moves th,.moves td{text-align:left;padding:9px 5px;border-bottom:1px solid var(--line)}.moves th{color:var(--muted);font-size:12px}.hidden{display:none!important}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.section-title h2{margin:0}.footer{text-align:center;color:var(--muted);font-size:12px;padding:14px}.tag{font-size:11px;color:var(--muted)}@media(max-width:650px){.app{padding:12px 10px 34px}.stats{grid-template-columns:repeat(2,1fr)}.stats .stat:last-child{grid-column:1/-1}.setup-grid{grid-template-columns:1fr 1fr}.setup-grid>div:last-child{grid-column:1/-1}.table-grid{grid-template-columns:1fr}.top h1{font-size:19px}.status{max-width:100px}.panel{padding:12px}.stat strong{font-size:24px}}@media(min-width:900px){.table-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .name-modal-backdrop{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:18px}
 .name-modal-backdrop.hidden{display:none!important}
@@ -21,8 +21,9 @@
 .name-modal .modal-actions{display:flex;gap:8px;margin-top:14px}
 .name-modal .modal-actions button{flex:1}
 .name-modal input{margin-top:6px}
-.seat .seat-num,.seat .edit-name,.seat .bust{width:40px;height:40px;min-width:40px;flex:0 0 40px;border-radius:10px;display:grid;place-items:center;padding:0}
+.seat .seat-num,.seat .edit-name,.seat .bust,.seat .rebuy{width:40px;height:40px;min-width:40px;flex:0 0 40px;border-radius:10px;display:grid;place-items:center;padding:0}
 .seat .seat-num{background:#27342b;font-size:24px;color:#d2dfd5}
+.seat .rebuy{border:1px solid #e9c542;background:#e9c542;color:#171717;font-size:30px;font-weight:850;font-family:inherit;line-height:1}
 .seat .edit-name{width:40px;height:40px;min-width:40px;flex:0 0 40px;border:1px solid #3d6794;background:#1c3550;color:#d6eaff;font-size:22px;font-weight:800;border-radius:10px}
 .seat .bust{border:1px solid #75403b;background:#3a201e;color:#ffd3cf;font-size:30px;font-weight:850;font-family:inherit;line-height:1}
 
@@ -35,6 +36,8 @@
 .new-table-row #newTableStatus{margin:0;width:100%;display:flex;align-items:center;min-height:48px}
 .new-table-row #openTableBtn{align-self:stretch;min-height:48px}
 
+.setup-grid select:disabled{opacity:.45;cursor:not-allowed;background-color:#333}
+.setup-grid [hidden]{display:none!important}
 /* Keep the setup action on the same row, aligned with the three inputs. */
 .setup-grid>.setup-action{grid-column:auto;display:flex;flex-direction:column;min-width:0}
 .setup-grid>.setup-action label{display:block}
@@ -57,6 +60,29 @@
 #tableGrid.tables-collapsed .table-player-count{white-space:nowrap;padding:5px 4px;font-size:17px;flex-shrink:0}
 #tableGrid.tables-collapsed .individual-view-button{padding:5px 6px;min-width:64px;justify-content:center;white-space:nowrap;margin-left:auto;font-size:13px}
 @media(min-width:900px) and (max-width:1100px){#tableGrid.tables-collapsed{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stats .stat[hidden]{display:none!important}.stats.with-reentries{grid-template-columns:repeat(6,minmax(0,1fr))}.stats.with-reentries .stat{min-width:0;overflow-wrap:anywhere}@media(max-width:600px){.stats.with-reentries{grid-template-columns:repeat(3,minmax(0,1fr))}.stats.with-reentries .stat:last-child{grid-column:auto}}
+.seat .topup{width:40px;height:40px;min-width:40px;flex:0 0 40px;border-radius:10px;display:grid;place-items:center;padding:0;border:1px solid #ed963c;background:#ed963c;color:#171717;font-size:30px;font-weight:850;font-family:inherit;line-height:1}
+.stats.with-topups{grid-template-columns:repeat(7,minmax(0,1fr))}@media(max-width:600px){.stats.with-topups{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Keep tournament options together on the second row, with compact numeric limits. */
+.setup-grid .setup-options-row{grid-column:1/-1;display:flex;gap:10px;align-items:flex-end;min-width:0}
+.setup-options-row>div{flex:0 1 calc((100% - 30px)/4);min-width:0}
+.setup-options-row>div:first-child{flex-basis:calc((100% - 30px)/4)}
+.setup-options-row #entryLimitField,.setup-options-row #topLimitField{flex:0 1 100px}
+.setup-options-row select,.setup-options-row input{min-width:0}
+.setup-options-row label{white-space:nowrap}
+@media(min-width:641px){.setup-options-row>div:first-child{flex-shrink:0;min-width:175px}.setup-options-row #entryOptionField,.setup-options-row #topOptionField{flex-shrink:1;min-width:110px}.setup-options-row #entryLimitField,.setup-options-row #topLimitField{min-width:78px}.setup-options-row select{padding-left:8px;padding-right:26px;background-position:right 7px center}}
+@media(max-width:640px){.setup-grid .setup-options-row{grid-column:1/-1;flex-wrap:wrap}.setup-options-row>div,.setup-options-row>div:first-child{flex:1 1 42%}.setup-options-row label{white-space:normal}}
+/* Fit seating-plan names without changing action button dimensions. */
+#tableGrid .seat-list{grid-template-columns:minmax(0,1fr);min-width:0}
+#tableGrid .table-card,#tableGrid .seat{min-width:0;max-width:100%}
+#tableGrid .seat-name{flex:1 1 0%;width:0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal}
+#tableGrid .seat>button,#tableGrid .seat>.seat-num{flex:0 0 40px;width:40px;min-width:40px;max-width:40px}
+#tableGrid .seat{gap:5px;padding-inline:5px}
+#tableGrid .seat{display:grid;grid-template-columns:40px minmax(0,1fr)}
+#tableGrid .seat-name{width:100%;min-width:0}
+#tableGrid .seat.actions-two{grid-template-columns:40px minmax(0,1fr) repeat(2,40px)}
+#tableGrid .seat.actions-three{grid-template-columns:40px minmax(0,1fr) repeat(3,40px)}
+#tableGrid .seat.actions-four{grid-template-columns:40px minmax(0,1fr) repeat(4,40px)}
 </style>
 </head>
 <body>
@@ -70,10 +96,17 @@
   <div class="setup-grid">
     <div><label for="tables">Starting tables</label><select id="tables"></select></div>
     <div><label for="seats">Seats per table</label><select id="seats"></select></div>
-    <div><label for="tournamentName">Tournament name (optional)</label><input id="tournamentName" placeholder="Friday Night Poker"></div>
+    <div><label for="finalTableSeats">Final table seats</label><select id="finalTableSeats"></select></div>
     <div class="setup-action"><label for="applySetup">&nbsp;</label><button class="primary" id="applySetup" type="button">Apply setup changes</button></div>
+    <div class="setup-options-row">
+    <div><label for="tournamentType">Tournament type</label><select id="tournamentType"><option>Re-Entry</option><option>Re-Buy</option><option>Re-Buy + Top Up</option><option>Freezeout</option></select></div>
+    <div id="entryOptionField"><label for="entryOption" id="entryOptionLabel">Re-Entries Allowed</label><select id="entryOption"><option>Unlimited</option><option>Custom</option></select></div>
+    <div id="entryLimitField" hidden><label for="entryLimit" id="entryLimitLabel">Maximum additional entries</label><input id="entryLimit" type="number" min="1" step="1" value="2" inputmode="numeric"></div>
+    <div id="topOptionField" hidden><label for="topOption">Top-Ups Allowed</label><select id="topOption"><option>Unlimited</option><option>Custom</option></select></div>
+    <div id="topLimitField" hidden><label for="topLimit">Max top-ups</label><input id="topLimit" type="number" min="1" step="1" value="2"></div>
+    </div>
   </div>
-  <p class="small">Break thresholds are calculated automatically from seats per table. For 9 seats: 27 players = 3 tables, 18 = 2 tables, 9 = final table.</p>
+  <p class="small">Break thresholds use seats per table, except the final table which uses the selected final table seats.</p>
   <div class="notice" id="thresholdNotice">Thresholds will appear here.</div>
 </section>
 <section class="panel">
@@ -82,11 +115,15 @@
   <p class="small">Players are seated at the next available seat. Re-entries can be recorded as a new entry using the player's name plus an entry number.</p>
 </section>
 <div id="notice" class="notice">Ready. Add players to start building the seating plan.</div>
-<div class="stats">
+<div class="stats" id="playerStats">
   <div class="stat"><span>Players remaining</span><strong id="activeCount">0</strong></div>
   <div class="stat"><span>Active tables</span><strong id="tableCountStat">4</strong></div>
-  <div class="stat"><span>Eliminated</span><strong id="bustedCount">0</strong></div>
   <div class="stat"><span>Empty seats</span><strong id="emptyCount">36</strong></div>
+  <div class="stat" id="reEntryStat" hidden><span>Re-Entries</span><strong id="reEntryCount">0</strong></div>
+  <div class="stat" id="reBuyStat" hidden><span>Re-Buys</span><strong id="reBuyCount">0</strong></div>
+  <div class="stat" id="topStat" hidden><span>Top-Ups</span><strong id="topCount">0</strong></div>
+  <div class="stat"><span>Eliminated</span><strong id="bustedCount">0</strong></div>
+  <div class="stat"><span>Total players</span><strong id="totalCount">0</strong></div>
 </div>
 <section class="panel">
   <div class="section-title"><h2>3 · Seating plan</h2><div class="seating-heading-actions"><span class="tag" id="seatSummary">0 seats occupied</span><button type="button" id="toggleTableView" aria-controls="tableGrid" aria-expanded="true" disabled>Collapse / View Tables</button></div></div>
@@ -202,6 +239,8 @@
     <div class="modal-actions"><button type="button" class="primary" id="setupRequiredOK">OK</button></div>
   </div>
 </div>
+<div id="reEntryModal" class="name-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="reEntryTitle">
+<div class="name-modal"><h2 id="reEntryTitle">Confirm Re-Entry</h2><p id="reEntryMessage"></p><div class="modal-actions"><button type="button" class="primary" id="reEntryConfirm">Confirm</button><button type="button" id="reEntryCancel">Cancel</button></div></div></div>
 <div id="noSeatsModal" class="name-modal-backdrop hidden" role="alertdialog" aria-modal="true" aria-labelledby="noSeatsTitle" aria-describedby="noSeatsMessage">
   <div class="name-modal">
     <h2 id="noSeatsTitle">No Available Seats</h2>
@@ -222,6 +261,19 @@
 <div id="editPlayerModal" class="name-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="editPlayerTitle">
   <div class="name-modal">
     <h2 id="editPlayerTitle">Edit Player</h2>
+    <div id="editReBuyChoices" class="hidden">
+      <p id="editReBuySummary"></p>
+      <div class="modal-actions" style="flex-direction:column">
+        <button type="button" id="editNameChoice" style="background:#2563a8;color:white">Edit Player Name</button>
+        <button type="button" id="undoReBuyChoice" style="background:#e9c542;color:#171717">Undo a Re-Buy</button>
+        <button type="button" id="undoTopChoice" style="background:#ed963c;color:#171717" hidden>Undo a Top-Up</button>
+        <button type="button" id="editChoiceCancel" class="ghost">Cancel</button>
+      </div>
+    </div>
+    <div id="undoReBuyPanel" class="hidden">
+      <p id="undoReBuyMessage"></p>
+      <div class="modal-actions"><button type="button" id="undoReBuyCancel" class="ghost">Cancel</button><button type="button" id="undoReBuyConfirm" class="primary">Confirm</button></div>
+    </div>
     <form id="editPlayerForm">
       <label for="editPlayerInput">Player name</label>
       <input id="editPlayerInput" autocomplete="off" required>
@@ -236,7 +288,7 @@
 (() => {
 const $=id=>document.getElementById(id);
 const KEY='poker-player-manager-v1';
-let state={configuredTables:1,activeTables:1,seatsPerTable:9,tableSeatCounts:{},name:'',players:[],nextId:1,closedTables:[],tableIds:[1],tableOrder:[1],nextTableNumber:2,finalTableId:null,history:[]};
+let state={configuredTables:1,activeTables:1,seatsPerTable:9,finalTableSeats:null,tournamentType:"Re-Entry",entryOption:"Unlimited",entryLimit:2,topOption:"Unlimited",topLimit:2,tableSeatCounts:{},name:'',players:[],nextId:1,closedTables:[],tableIds:[1],tableOrder:[1],nextTableNumber:2,finalTableId:null,history:[]};
 let proposed=null;
 let proposedBalance=null;
 let newTableProposal=null;
@@ -259,18 +311,24 @@ function occupied(t,s){return active().some(p=>p.table===t&&p.seat===s);}
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 function seatsAt(t){return Math.max(2,Math.min(10,Number(state.tableSeatCounts?.[t])||state.seatsPerTable));}
 function totalCapacity(){return tableIds().reduce((a,t)=>a+seatsAt(t),0);}
-function thresholds(){const arr=[];for(let n=state.configuredTables-1;n>=1;n--)arr.push(n*state.seatsPerTable);return arr;}
+function finalSeats(){return Math.max(2,Math.min(10,Number(state.finalTableSeats)||state.seatsPerTable));}
+function breakThreshold(){return state.activeTables===2?finalSeats():Math.max(0,(state.activeTables-1)*state.seatsPerTable);}
+function thresholds(){const arr=[];for(let n=state.configuredTables-1;n>=1;n--)arr.push(n===1?finalSeats():n*state.seatsPerTable);return arr;}
 function nextThreshold(){const n=active().length;return thresholds().find(x=>n<=x)??null;}
-function due(){const n=active().length;return state.activeTables>1&&n<=((state.activeTables-1)*state.seatsPerTable)&&n>0;}
+function due(){const n=active().length;return state.activeTables>1&&n<=breakThreshold()&&n>0;}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function fillSelect(id,from,to,selected){const el=$(id);el.innerHTML='';for(let n=from;n<=to;n++){const o=document.createElement('option');o.value=n;o.textContent=n;el.appendChild(o);}el.value=selected;}
 let appliedSetupControls;
-function setupControlsSnapshot(){return JSON.stringify([Number($('tables').value),Number($('seats').value),$('tournamentName').value.trim()]);}
+function isReBuyType(t){return t==='Re-Buy'||t==='Re-Buy + Top Up';}
+function hasTopUps(){return state.tournamentType==='Re-Buy + Top Up';}
+function topUsed(p){return Math.max(0,Number(p.topups)||0);}
+function setupControlsSnapshot(){return JSON.stringify([Number($('tables').value),Number($('seats').value),Number($('finalTableSeats').value),$('tournamentType').value,$('tournamentType').value==='Freezeout'?null:$('entryOption').value,$('tournamentType').value!=='Freezeout'&&$('entryOption').value==='Custom'?Number($('entryLimit').value):null,$('tournamentType').value==='Re-Buy + Top Up'?$('topOption').value:null,$('tournamentType').value==='Re-Buy + Top Up'&&$('topOption').value==='Custom'?Number($('topLimit').value):null]);}
 function setupChangesPending(){return setupControlsSnapshot()!==appliedSetupControls;}
-function initControls(){fillSelect('tables',1,20,state.configuredTables);fillSelect('seats',2,10,state.seatsPerTable);$('tournamentName').value=state.name||'';appliedSetupControls=setupControlsSnapshot();}
+function updateEntryControls(){const freeze=$('tournamentType').value==='Freezeout';$('entryOptionField').hidden=freeze;$('entryOptionLabel').textContent=isReBuyType($('tournamentType').value)?'Re-Buys Allowed':'Re-Entries Allowed';$('entryOption').disabled=freeze;$('entryLimitField').hidden=freeze||$('entryOption').value!=='Custom';$('entryLimitLabel').textContent=isReBuyType($('tournamentType').value)?'Max re-buys':'Max re-entries';const top=$('tournamentType').value==='Re-Buy + Top Up';$('topOptionField').hidden=!top;$('topLimitField').hidden=!top||$('topOption').value!=='Custom';}
+function initControls(){fillSelect('tables',1,20,state.configuredTables);fillSelect('seats',2,10,state.seatsPerTable);fillSelect('finalTableSeats',2,10,finalSeats());$('tournamentType').value=state.tournamentType;$('entryOption').value=state.entryOption;$('entryLimit').value=state.entryLimit;$('topOption').value=state.topOption;$('topLimit').value=state.topLimit;updateEntryControls();appliedSetupControls=setupControlsSnapshot();}
 function render(allowBreakAlert=false){
  const a=active(),b=busted(),cap=totalCapacity();
- $('activeCount').textContent=a.length;$('tableCountStat').textContent=state.activeTables;$('bustedCount').textContent=b.length;$('emptyCount').textContent=Math.max(0,cap-a.length);
+ $('activeCount').textContent=a.length;$('tableCountStat').textContent=state.activeTables;$('bustedCount').textContent=b.length;$('emptyCount').textContent=Math.max(0,cap-a.length);const isReEntry=state.tournamentType==='Re-Entry';const reEntries=state.players.reduce((sum,p)=>sum+reEntryUsed(p),0);$('reEntryStat').hidden=!isReEntry;const isReBuy=isReBuyType(state.tournamentType);$('reBuyStat').hidden=!isReBuy;$('topStat').hidden=!hasTopUps();$('topCount').textContent=state.players.reduce((sum,p)=>sum+topUsed(p),0);$('playerStats').classList.toggle('with-topups',hasTopUps());$('reBuyCount').textContent=state.players.reduce((sum,p)=>sum+reBuyUsed(p),0);$('playerStats').classList.toggle('with-reentries',isReEntry||isReBuy);$('reEntryCount').textContent=reEntries;$('totalCount').textContent=a.length+b.length+(isReEntry?reEntries:0);
  $('seatSummary').textContent=`${a.length} of ${cap} seats occupied`;
  $('thresholdNotice').textContent=`Break thresholds: ${thresholds().join(' → ')} players. Current field: ${a.length}.`;
  const grid=$('tableGrid');grid.innerHTML='';
@@ -281,7 +339,8 @@ function render(allowBreakAlert=false){
    const list=card.querySelector('.seat-list');
    for(let s=1;s<=seatsAt(t);s++){
     const p=people.find(x=>x.seat===s),row=document.createElement('div');row.className='seat'+(p?'':' empty');
-    row.innerHTML=`<span class="seat-num">${s}</span><span class="seat-name">${p?esc(p.name):'Empty seat'}</span>${p?`<button class="edit-name" data-id="${p.id}" aria-label="Edit name for ${esc(p.name)}" title="Edit player name">✎</button><button class="bust" data-id="${p.id}" aria-label="Eliminate ${esc(p.name)}" title="Mark eliminated">X</button>`:''}`;
+    if(p)row.classList.add(hasTopUps()?"actions-four":isReBuyType(state.tournamentType)?"actions-three":"actions-two");
+    row.innerHTML=`<span class="seat-num">${s}</span><span class="seat-name">${p?esc(p.name):'Empty seat'}</span>${p?`${isReBuyType(state.tournamentType)?`<button class="rebuy" data-id="${p.id}" aria-label="Record re-buy for ${esc(p.name)}" title="Re-buys: ${reBuyUsed(p)}">${reBuyUsed(p)||'R'}</button>`:''}${hasTopUps()?`<button class="topup" data-id="${p.id}" title="Top-ups: ${topUsed(p)}" aria-label="Record top-up for ${esc(p.name)}">${topUsed(p)||'T'}</button>`:''}<button class="edit-name" data-id="${p.id}" aria-label="Edit name for ${esc(p.name)}" title="Edit player name">✎</button><button class="bust" data-id="${p.id}" aria-label="Eliminate ${esc(p.name)}" title="Mark eliminated">X</button>`:''}`;
     list.appendChild(row);
    }
    grid.appendChild(card);
@@ -291,15 +350,35 @@ function render(allowBreakAlert=false){
  setupTableDragging(grid);
  grid.querySelectorAll('[data-seat-plus],[data-seat-minus]').forEach(btn=>btn.addEventListener('click',()=>changeTableSeats(Number(btn.dataset.seatPlus||btn.dataset.seatMinus),btn.hasAttribute('data-seat-plus')?1:-1)));
  grid.querySelectorAll('.bust').forEach(btn=>btn.addEventListener('click',()=>bustPlayer(Number(btn.dataset.id))));
+ grid.querySelectorAll('.topup').forEach(btn=>btn.addEventListener('click',()=>recordTopUp(Number(btn.dataset.id))));
+ grid.querySelectorAll('.rebuy').forEach(btn=>btn.addEventListener('click',()=>recordReBuy(Number(btn.dataset.id))));
  grid.querySelectorAll('.edit-name').forEach(btn=>btn.addEventListener('click',()=>editPlayerName(Number(btn.dataset.id))));
 
  renderBalance();renderBreak(allowBreakAlert);renderBusted();renderNewTable();save();
 }
 
+function fitSeatNames(){
+ const names=[...$('tableGrid').querySelectorAll('.seat-name')].filter(el=>el.clientWidth>0);
+ for(const el of names)el.style.fontSize='';
+ for(const el of names){
+   const normal=parseFloat(getComputedStyle(el).fontSize);
+   let size=normal;
+   while(el.scrollWidth>el.clientWidth && size>8){
+     size=Math.max(8,size-0.5);
+     el.style.fontSize=size+'px';
+   }
+   el.title=el.textContent;
+ }
+}
+let nameFitFrame=0;
+function scheduleSeatNameFit(){
+ cancelAnimationFrame(nameFitFrame);
+ nameFitFrame=requestAnimationFrame(fitSeatNames);
+}
 let tablesCollapsed=false;
 const individualViews=new Set();
 function updateTableView(){
- const enabled=state.activeTables>3;
+ const enabled=state.activeTables>0;
  if(!enabled){tablesCollapsed=false;individualViews.clear();}
  for(const t of individualViews)if(!state.tableOrder.includes(t))individualViews.delete(t);
  const button=$('toggleTableView');
@@ -308,9 +387,10 @@ function updateTableView(){
  button.setAttribute('aria-expanded',String(!tablesCollapsed));
  $('tableGrid').classList.toggle('tables-collapsed',tablesCollapsed);
  $('tableGrid').querySelectorAll('.table-card').forEach(card=>{card.draggable=true;const open=tablesCollapsed&&individualViews.has(Number(card.dataset.table));card.classList.toggle('individual-view',open);const view=card.querySelector('.individual-view-button');view.setAttribute('aria-expanded',String(open));view.textContent=open?'Collapse':'View';});
+ scheduleSeatNameFit();
 }
 $('toggleTableView').addEventListener('click',()=>{
- if(state.activeTables<=3)return;
+ if(state.activeTables<=0)return;
  tablesCollapsed=!tablesCollapsed;
  individualViews.clear();
  updateTableView();
@@ -403,11 +483,11 @@ function renderBreak(allowBreakAlert=false){
   $('confirmMoves').disabled=true;
   return;
  }
- const n=active().length,need=state.activeTables>1&&n>0&&n<=((state.activeTables-1)*state.seatsPerTable);
+ const n=active().length,need=state.activeTables>1&&n>0&&n<=breakThreshold();
  $('prepareMoves').textContent=state.activeTables===2?'Randomise final-table seats':'Randomise seats';
  $('confirmMoves').textContent=state.activeTables===2?'Confirm final table':'Confirm moves & close table';
  $('breakControls').classList.toggle('hidden',!need);
- if(!need){$('breakStatus').textContent=state.activeTables===1?'Final table: no further table breaks needed.':n===0?'No active players.':`No table break due. Next threshold is ${Math.max(0,(state.activeTables-1)*state.seatsPerTable)} players.`;$('breakStatus').className='notice';proposed=null;return;}
+ if(!need){$('breakStatus').textContent=state.activeTables===1?'Final table: no further table breaks needed.':n===0?'No active players.':`No table break due. Next threshold is ${breakThreshold()} players.`;$('breakStatus').className='notice';proposed=null;return;}
  $('breakStatus').textContent=`Table break recommended: ${n} players remain. Close one table and move its ${onTable(Number($('breakTable').value)||1).length} remaining player(s) to open seats.`;$('breakStatus').className='notice warn';
  const sel=$('breakTable'),old=sel.value;sel.innerHTML='';
  for(const t of tableIds()){const o=document.createElement('option');o.value=t;o.textContent=`Table ${t} (${onTable(t).length} players)`;sel.appendChild(o);}
@@ -425,8 +505,40 @@ function editPlayerName(id){
  editingPlayerId=id;
  $('editPlayerInput').value=capitalisePlayerName(p.name);
  $('editPlayerModal').classList.remove('hidden');
- $('editPlayerInput').focus();
- $('editPlayerInput').select();
+ $('undoReBuyPanel').classList.add('hidden');
+ $('editPlayerTitle').textContent='Edit Player';
+ if(isReBuyType(state.tournamentType)){
+  $('editPlayerForm').classList.add('hidden');
+  $('editReBuyChoices').classList.remove('hidden');
+  $('editReBuySummary').textContent=`${p.name} — Recorded re-buys: ${reBuyUsed(p)}`;
+  $('undoTopChoice').hidden=!hasTopUps();$('undoTopChoice').disabled=topUsed(p)===0;if(hasTopUps())$('editReBuySummary').textContent+=` — Top-ups: ${topUsed(p)}`;$('undoReBuyChoice').disabled=reBuyUsed(p)===0;
+  $('undoReBuyChoice').style.opacity=reBuyUsed(p)===0?'0.45':'1';
+  $('editNameChoice').focus();
+ }else showEditNameForm();
+}
+function showEditNameForm(){
+ $('editReBuyChoices').classList.add('hidden');
+ $('undoReBuyPanel').classList.add('hidden');
+ $('editPlayerForm').classList.remove('hidden');
+ $('editPlayerInput').focus();$('editPlayerInput').select();
+}
+let undoTop=false;
+function previewUndoReBuy(){undoTop=false;
+ const p=state.players.find(x=>x.id===editingPlayerId&&x.active);
+ if(!p||!isReBuyType(state.tournamentType)||reBuyUsed(p)<1)return;
+ $('editReBuyChoices').classList.add('hidden');
+ $('undoReBuyPanel').classList.remove('hidden');
+ $('editPlayerTitle').textContent='Undo a Re-Buy';
+ $('undoReBuyMessage').textContent=`Undo one re-buy for ${p.name}? Recorded re-buys will change from ${reBuyUsed(p)} to ${reBuyUsed(p)-1}.`;
+ $('undoReBuyCancel').focus();
+}
+function previewUndoTop(){const p=state.players.find(x=>x.id===editingPlayerId&&x.active);if(!p||!hasTopUps()||!topUsed(p))return;undoTop=true;$('editReBuyChoices').classList.add('hidden');$('undoReBuyPanel').classList.remove('hidden');$('editPlayerTitle').textContent='Undo a Top-Up';$('undoReBuyMessage').textContent=`Undo one top-up for ${p.name}? Recorded top-ups will change from ${topUsed(p)} to ${topUsed(p)-1}.`;}
+function confirmUndoReBuy(){if(undoTop){const p=state.players.find(x=>x.id===editingPlayerId&&x.active);undoTop=false;if(p&&hasTopUps()&&topUsed(p)>0){p.topups=topUsed(p)-1;state.history.push({action:'undo-top-up',id:p.id,topups:p.topups,at:new Date().toISOString()});closeEditPlayerModal();msg(`${p.name}: one top-up undone.`);render(false);}return;}
+ const p=state.players.find(x=>x.id===editingPlayerId&&x.active);
+ if(!p||!isReBuyType(state.tournamentType)||reBuyUsed(p)<1){closeEditPlayerModal();return;}
+ p.rebuys=reBuyUsed(p)-1;
+ state.history.push({action:'undo-re-buy',id:p.id,name:p.name,table:p.table,seat:p.seat,rebuys:p.rebuys,at:new Date().toISOString()});
+ closeEditPlayerModal();msg(`${p.name}: one re-buy undone. ${p.rebuys} recorded.`);render(false);
 }
 async function saveEditedPlayerName(){
  const p=state.players.find(x=>x.id===editingPlayerId);if(!p){closeEditPlayerModal();return;}
@@ -440,7 +552,7 @@ async function saveEditedPlayerName(){
 
 function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p)return;const name=p.name,table=p.table,seat=p.seat;p.active=false;p.bustedAt=new Date().toISOString();p.bustOrder=Math.max(0,...state.players.map(player=>Number(player.bustOrder)||0))+1;state.history.push({action:'bust',name:p.name,table:p.table,seat:p.seat});proposed=null;proposedBalance=null;lastBustMessage=`${name} has been eliminated from Table ${table}, Seat ${seat}.`;msg(lastBustMessage);if(newTableOpened){newTableProposal=null;$('newTablePreview').innerHTML='';$('confirmNewTableMoves').disabled=true;$('newTablePlayerList').dataset.target='';}render(true);
  const counts=tableCounts(),max=Math.max(0,...counts.map(x=>x.count)),min=Math.min(...counts.map(x=>x.count));
- if(!newTableOpened&&$('tableBreakAlertModal').classList.contains('hidden')&&state.activeTables>1&&max-min>1&&!$('balanceControls').classList.contains('hidden')){
+ if(!balancingPaused()&&$('tableBreakAlertModal').classList.contains('hidden')&&state.activeTables>1&&max-min>1&&!$('balanceControls').classList.contains('hidden')){
    $('tableBalanceAlertMessage').textContent=`${name} has been eliminated. Tables now need balancing. Current table counts: ${counts.map(x=>`T${x.table}: ${x.count}`).join(' · ')}. Use the Table balance after eliminations section to move a player.`;
    $('tableBalanceAlertModal').classList.remove('hidden');
    $('tableBalanceAlertOK').focus();
@@ -448,9 +560,10 @@ function bustPlayer(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p
 }
 
 function tableCounts(){return tableIds().map(table=>({table,count:onTable(table).length}));}
+function balancingPaused(){return newTableOpened||due();}
 function renderBalance(){
- if(newTableOpened){
- $('balanceStatus').textContent=`Table balancing paused while players are being moved to Table ${newTableTarget}. Press “All table moves completed” in Section 6 to resume.`;
+ if(balancingPaused()){
+ $('balanceStatus').textContent=newTableOpened?`Table balancing paused while players are being moved to Table ${newTableTarget}. Press “All table moves completed” in Section 6 to resume.`:'Table balancing paused. A table break is required. Complete the table break in Section 5 before balancing tables.';
  $('balanceStatus').className='notice';$('balanceControls').classList.add('hidden');$('tableBalanceAlertModal').classList.add('hidden');proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;return;
  }
  const counts=tableCounts(),activePlayers=active().length,el=$('balanceStatus');
@@ -479,13 +592,13 @@ function refreshBalancePlayers(){
  if([...sel.options].some(o=>o.value===old))sel.value=old;
 }
 function refreshBalanceSeats(){const table=Number($('balanceTarget').value),sel=$('balanceSeat'),old=sel.value;sel.innerHTML='';if(!table)return;for(let seat=1;seat<=seatsAt(table);seat++){if(!occupied(table,seat)){const o=document.createElement('option');o.value=seat;o.textContent=`Seat ${seat}`;sel.appendChild(o);}}if([...sel.options].some(o=>o.value===old))sel.value=old;}
-function prepareBalance(){if(newTableOpened)return;const id=Number($('balancePlayer').value),toTable=Number($('balanceTarget').value),toSeat=Number($('balanceSeat').value),p=state.players.find(x=>x.id===id&&x.active);if(!p||p.table!==Number($('balanceSource').value)||!toTable||!toSeat){msg('Choose a player, destination table and seat.','error');return;}if(p.table===toTable){msg('Choose a player from a different table.','error');return;}
+function prepareBalance(){if(balancingPaused())return;const id=Number($('balancePlayer').value),toTable=Number($('balanceTarget').value),toSeat=Number($('balanceSeat').value),p=state.players.find(x=>x.id===id&&x.active);if(!p||p.table!==Number($('balanceSource').value)||!toTable||!toSeat){msg('Choose a player, destination table and seat.','error');return;}if(p.table===toTable){msg('Choose a player from a different table.','error');return;}
  if(occupied(toTable,toSeat)){msg(`Table ${toTable}, Seat ${toSeat} is no longer empty. Please choose another seat.`, 'error');refreshBalanceSeats();return;}
  const least=Math.min(...tableCounts().map(x=>x.count));if(onTable(toTable).length!==least){msg('The destination is no longer the least-populated table. Please review the table counts.','error');renderBalance();return;}
  proposedBalance={id:p.id,name:p.name,fromTable:p.table,fromSeat:p.seat,toTable,toSeat};
  $('balancePreview').innerHTML=`<p><strong>Move ${esc(p.name)}</strong> from Table ${p.table}, Seat ${p.seat} to Table ${toTable}, Seat ${toSeat}?</p><p class="small">Counts after the move: ${tableCounts().map(t=>`T${t.table}: ${t.count+(t.table===p.table?-1:t.table===toTable?1:0)}`).join(' · ')}. Nothing changes until you confirm.</p>`;
  $('confirmBalance').disabled=false;}
-function confirmBalance(){if(newTableOpened)return;if(!proposedBalance)return;const m=proposedBalance,p=state.players.find(x=>x.id===m.id&&x.active);if(!p){cancelBalance();return;}p.table=m.toTable;p.seat=m.toSeat;state.history.push({action:'balance-move',name:p.name,fromTable:m.fromTable,fromSeat:m.fromSeat,toTable:m.toTable,toSeat:m.toSeat});lastBustMessage=`Balance update: ${p.name} moved from Table ${m.fromTable} to Table ${m.toTable} after a elimination.`;proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;msg(lastBustMessage);render();}
+function confirmBalance(){if(balancingPaused())return;if(!proposedBalance)return;const m=proposedBalance,p=state.players.find(x=>x.id===m.id&&x.active);if(!p){cancelBalance();return;}p.table=m.toTable;p.seat=m.toSeat;state.history.push({action:'balance-move',name:p.name,fromTable:m.fromTable,fromSeat:m.fromSeat,toTable:m.toTable,toSeat:m.toSeat});lastBustMessage=`Balance update: ${p.name} moved from Table ${m.fromTable} to Table ${m.toTable} after a elimination.`;proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;msg(lastBustMessage);render();}
 function cancelBalance(){proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;msg('Player move cancelled. No seating changes made.');}
 
 function capitalisePlayerName(value){return String(value||'').trim().replace(/(^|[\s'-])([a-z])/g,(match,prefix,letter)=>prefix+letter.toUpperCase());}
@@ -509,19 +622,19 @@ async function addPlayer(name){name=name.trim();if(!name)return false;if(setupCh
  const openSpots=[];for(const t of tableIds())if(leastTables.has(t))for(let s=1;s<=seatsAt(t);s++)if(!occupied(t,s))openSpots.push({table:t,seat:s});
  const spot=openSpots[Math.floor(Math.random()*openSpots.length)];
  state.players.push({id:state.nextId++,name,table:spot.table,seat:spot.seat,active:true,entry:1,addedAt:new Date().toISOString()});msg(`${name} randomly seated at Table ${spot.table}, Seat ${spot.seat}. Tables kept as balanced as possible.`);render();return true;}
-function applySetup(){const tables=Number($('tables').value),seats=Number($('seats').value),n=active().length;if(n>tables*seats){msg(`Cannot apply: ${n} active players exceed the ${tables*seats} available seats.`,'error');return;}
- state.configuredTables=tables;state.activeTables=tables;state.seatsPerTable=seats;state.tableSeatCounts={};state.name=$('tournamentName').value.trim();state.closedTables=[];state.tableIds=Array.from({length:tables},(_,i)=>i+1);state.tableOrder=[...state.tableIds];state.nextTableNumber=tables+1;proposed=null;
+function applySetup(){const type=$('tournamentType').value,option=$('entryOption').value,limit=Number($('entryLimit').value);if(type!=='Freezeout'&&option==='Custom'&&(!Number.isSafeInteger(limit)||limit<1)){msg('Enter a positive whole number for the custom limit.','error');$('entryLimit').focus();return;}const topLimit=Number($('topLimit').value);if(type==='Re-Buy + Top Up'&&$('topOption').value==='Custom'&&(!Number.isSafeInteger(topLimit)||topLimit<1)){msg('Enter a positive whole number for the top-up limit.','error');$('topLimit').focus();return;}const tables=Number($('tables').value),seats=Number($('seats').value),n=active().length;if(n>tables*seats){msg(`Cannot apply: ${n} active players exceed the ${tables*seats} available seats.`,'error');return;}
+ state.topOption=$('topOption').value;state.topLimit=Number.isSafeInteger(topLimit)&&topLimit>0?topLimit:2;state.tournamentType=type;state.entryOption=option;state.entryLimit=Number.isSafeInteger(limit)&&limit>0?limit:2;state.configuredTables=tables;state.activeTables=tables;state.seatsPerTable=seats;state.tableSeatCounts={};state.finalTableSeats=Number($('finalTableSeats').value);state.closedTables=[];state.tableIds=Array.from({length:tables},(_,i)=>i+1);state.tableOrder=[...state.tableIds];state.nextTableNumber=tables+1;state.finalTableId=null;proposed=null;
  // Preserve existing seats where possible; move any invalid/duplicate assignments to the next free seat.
  const seen=new Set();for(const p of active()){const key=`${p.table}:${p.seat}`;if(!tableIds().includes(p.table)||p.seat>seats||seen.has(key)){p.table=0;p.seat=0;}else seen.add(key);}
  for(const p of active().filter(p=>p.table===0)){let found=false;for(let t=1;t<=tables&&!found;t++)for(let s=1;s<=seats;s++)if(!seen.has(`${t}:${s}`)){p.table=t;p.seat=s;seen.add(`${t}:${s}`);found=true;break;}}
  initControls();msg('Setup updated. Break thresholds have been recalculated.');render();}
-function prepareMoves(){const from=Number($('breakTable').value),n=active().length;if(state.activeTables<=1)return;
+function prepareMoves(){const from=Number($('breakTable').value),n=active().length;if(state.activeTables<=1||!due()||newTableOpened)return;
  if(state.activeTables===2){
   const players=shuffle([...active()]);
   const survivor=tableIds().find(t=>t!==from);
-  if(players.length>seatsAt(survivor)){msg(`There are ${players.length} players, but only ${seatsAt(survivor)} seats at the final table. Check the seating plan before continuing.`,'error');return;}
-  proposed={finalTable:true,from,survivor,moves:players.map((p,i)=>({id:p.id,name:p.name,fromTable:p.table,fromSeat:p.seat,toTable:survivor,toSeat:i+1}))};
-  $('movePreview').innerHTML=`<h3 style="font-size:15px">Randomised final-table seating</h3><p class="small">All ${players.length} remaining players from both tables will be assigned new seats at Table ${survivor}.</p><table class="moves"><thead><tr><th>Player</th><th>Current seat</th><th>New seat</th></tr></thead><tbody>${proposed.moves.map(m=>`<tr><td>${esc(m.name)}</td><td>T${m.fromTable} · S${m.fromSeat}</td><td><strong>T${survivor} · S${m.toSeat}</strong></td></tr>`).join('')}</tbody></table><p class="small">Every remaining player is included. Nothing changes until you confirm.</p>`;
+  if(players.length>finalSeats()){msg(`There are ${players.length} players, but only ${finalSeats()} seats at the final table. Check the seating plan before continuing.`,'error');return;}
+  proposed={finalTable:true,from,survivor,moves:players.map((p,i)=>({id:p.id,name:p.name,fromTable:p.table,fromSeat:p.seat,toTable:survivor,toSeat:i+1})),capacity:finalSeats()};
+  $('movePreview').innerHTML=`<h3 style="font-size:15px">Randomised final-table seating</h3><p class="small">All ${players.length} remaining players from both tables will be assigned new seats at Table ${survivor}, with ${finalSeats()} seats.</p><table class="moves"><thead><tr><th>Player</th><th>Current seat</th><th>New seat</th></tr></thead><tbody>${[...proposed.moves].sort((a,b)=>a.fromTable-b.fromTable||a.fromSeat-b.fromSeat).map(m=>`<tr><td>${esc(m.name)}</td><td>T${m.fromTable} · S${m.fromSeat}</td><td><strong>T${survivor} · S${m.toSeat}</strong></td></tr>`).join('')}</tbody></table><p class="small">Every remaining player is included. Nothing changes until you confirm.</p>`;
   $('confirmMoves').disabled=false;msg(`Review all ${proposed.moves.length} final-table seat assignments, then confirm.`);return;
  }
  const movers=onTable(from);const destinations=[];
@@ -530,11 +643,13 @@ function prepareMoves(){const from=Number($('breakTable').value),n=active().leng
  if(destinations.length<movers.length){msg(`Not enough open seats on the other tables (${destinations.length} open for ${movers.length} players). Check the seating plan before continuing.`,'error');return;}
  shuffle(destinations);const shuffled=shuffle([...movers]);
  proposed={finalTable:false,from,moves:shuffled.map((p,i)=>({id:p.id,name:p.name,fromTable:p.table,fromSeat:p.seat,toTable:destinations[i].table,toSeat:destinations[i].seat}))};
- $('movePreview').innerHTML=`<h3 style="font-size:15px">Proposed moves from Table ${from}</h3><table class="moves"><thead><tr><th>Player</th><th>From</th><th>New seat</th></tr></thead><tbody>${proposed.moves.map(m=>`<tr><td>${esc(m.name)}</td><td>T${m.fromTable} · S${m.fromSeat}</td><td><strong>T${m.toTable} · S${m.toSeat}</strong></td></tr>`).join('')}</tbody></table><p class="small">Random assignments are prepared. Nothing changes until you confirm.</p>`;
+ $('movePreview').innerHTML=`<h3 style="font-size:15px">Proposed moves from Table ${from}</h3><table class="moves"><thead><tr><th>Player</th><th>From</th><th>New seat</th></tr></thead><tbody>${[...proposed.moves].sort((a,b)=>a.fromTable-b.fromTable||a.fromSeat-b.fromSeat).map(m=>`<tr><td>${esc(m.name)}</td><td>T${m.fromTable} · S${m.fromSeat}</td><td><strong>T${m.toTable} · S${m.toSeat}</strong></td></tr>`).join('')}</tbody></table><p class="small">Random assignments are prepared. Nothing changes until you confirm.</p>`;
  $('confirmMoves').disabled=false;msg(`Review ${proposed.moves.length} random seat assignment(s), then confirm.`);}
 function confirmMoves(){if(!proposed)return;const {from,moves,finalTable}=proposed;
  if(finalTable){
   const survivor=proposed.survivor;
+  if(!due()||proposed.capacity!==finalSeats()||moves.length!==active().length||moves.some(m=>!active().some(p=>p.id===m.id&&p.table===m.fromTable&&p.seat===m.fromSeat))){cancelMoves();msg("Player numbers or seating changed. Randomise final-table seats again.","error");return;}
+  state.tableSeatCounts[survivor]=finalSeats();
   for(const m of moves){const p=state.players.find(x=>x.id===m.id&&x.active);if(p){p.table=survivor;p.seat=m.toSeat;}}
   state.history.push({action:'final-table-randomise',closed:from,remaining:survivor,moves:moves.map(m=>({name:m.name,fromTable:m.fromTable,fromSeat:m.fromSeat,toTable:survivor,toSeat:m.toSeat}))});
   state.tableIds=[survivor];state.tableOrder=[survivor];state.activeTables=1;state.finalTableId=survivor;state.closedTables.push(from);
@@ -546,7 +661,7 @@ function confirmMoves(){if(!proposed)return;const {from,moves,finalTable}=propos
  state.tableIds=state.tableIds.filter(t=>t!==from);state.tableOrder=state.tableOrder.filter(t=>t!==from);
  state.activeTables=state.tableIds.length;state.closedTables.push(from);
  proposed=null;$('movePreview').innerHTML='';$('confirmMoves').disabled=true;
- msg(`Table ${from} closed. ${moves.length} player(s) randomly reassigned. Remaining table numbers have been preserved.`);render();
+ msg(`Table ${from} closed. ${moves.length} player(s) randomly reassigned. Remaining table numbers have been preserved.`);render(true);
 }
 function cancelMoves(){proposed=null;$('movePreview').innerHTML='';$('confirmMoves').disabled=true;msg('Proposed table break cancelled. No seats were changed.');}
 function renderNewTable(){
@@ -700,7 +815,27 @@ function restorePlayer(id){
   state.history.push({action:'restore-original-seating',id:player.id,name:player.name,table:fresh.table,seat:player.seat,from:fresh.to,to:fresh.from,moves:fresh.moves,at:new Date().toISOString()});
   closeRestoreOriginalModal();msg(`${player.name} restored to Table ${fresh.table}, Seat ${player.seat}; original seating reinstated.`);render();
  }
-function renderBusted(){const list=$('bustedList'),bs=busted().sort((a,b)=>(Date.parse(b.bustedAt)||0)-(Date.parse(a.bustedAt)||0)||(Number(b.bustOrder)||0)-(Number(a.bustOrder)||0));if(!bs.length){list.innerHTML='<p class="small">No players have been eliminated yet.</p>';return;}list.innerHTML=bs.map(p=>`<div class="seat" style="margin-bottom:8px;flex-wrap:wrap"><span class="seat-name">${esc(p.name)} <span class="small">· previously T${p.table} S${p.seat}</span></span><div style="display:flex;gap:6px;min-width:230px;flex:1"><select aria-label="Restore ${esc(p.name)} to table" id="restoreTable-${p.id}">${tableIds().map(t=>`<option value="${t}">Table ${t}</option>`).join('')}</select><select aria-label="Restore ${esc(p.name)} to seat" id="restoreSeat-${p.id}"></select><button class="primary" data-restore="${p.id}">Restore</button></div></div>`).join('');bs.forEach(p=>{const tableEl=$(`restoreTable-${p.id}`);tableEl.value=String(tableIds().includes(p.table)?p.table:tableIds()[0]);refreshRestoreSeats(p.id,p.seat);tableEl.addEventListener('change',()=>refreshRestoreSeats(p.id));$(`restoreSeat-${p.id}`).addEventListener('change',()=>{});});list.querySelectorAll('[data-restore]').forEach(btn=>btn.addEventListener('click',()=>restorePlayer(btn.dataset.restore))); 
+function reBuyUsed(p){return Math.max(0,Number(p.rebuys)||0);}
+function recordReBuy(id){
+ const p=state.players.find(x=>x.id===id&&x.active);
+ if(!p||!isReBuyType(state.tournamentType))return;
+ if(setupChangesPending()){$('setupRequiredModal').classList.remove('hidden');$('setupRequiredOK').focus();return;}
+ if(state.entryOption==='Custom'&&reBuyUsed(p)>=state.entryLimit){reEntryDialog('Re-Buy Limit Reached',`${p.name} has used all ${state.entryLimit} permitted re-buys. This player can no longer re-buy and must be eliminated from the tournament.`);return;}
+ p.rebuys=reBuyUsed(p)+1;
+ state.history.push({action:'re-buy',id:p.id,name:p.name,table:p.table,seat:p.seat,rebuys:p.rebuys});
+ msg(`${p.name}: re-buy ${p.rebuys}${state.entryOption==='Custom'?' of '+state.entryLimit:''} recorded.`);render(false);
+}
+function recordTopUp(id){const p=state.players.find(x=>x.id===id&&x.active);if(!p||!hasTopUps())return;if(setupChangesPending()){$('setupRequiredModal').classList.remove('hidden');$('setupRequiredOK').focus();return;}if(state.topOption==='Custom'&&topUsed(p)>=state.topLimit){reEntryDialog('Top-Up Limit Reached',`${p.name} has used all ${state.topLimit} permitted top-ups.`);return;}p.topups=topUsed(p)+1;state.history.push({action:'top-up',id:p.id,topups:p.topups,at:new Date().toISOString()});msg(`${p.name}: top-up ${p.topups} recorded.`);render(false);}
+let pendingReEntry=null;
+function reEntryUsed(p){return Math.max(0,(Number(p.entry)||1)-1);}
+function reEntryAllowed(p){return state.tournamentType==='Re-Entry'&&(state.entryOption!=='Custom'||reEntryUsed(p)<state.entryLimit);}
+function reEntrySpot(){const available=tableCounts().filter(t=>t.count<seatsAt(t.table));if(!available.length)return null;const min=Math.min(...available.map(t=>t.count));const spots=[];for(const t of available.filter(t=>t.count===min))for(let seat=1;seat<=seatsAt(t.table);seat++)if(!occupied(t.table,seat))spots.push({table:t.table,seat});return spots[Math.floor(Math.random()*spots.length)]||null;}
+function closeReEntry(){pendingReEntry=null;$('reEntryModal').classList.add('hidden');}
+function reEntryDialog(title,message,plan=null){pendingReEntry=plan;$('reEntryTitle').textContent=title;$('reEntryMessage').textContent=message;$('reEntryConfirm').textContent=plan?'Confirm':'OK';$('reEntryCancel').hidden=!plan;$('reEntryModal').classList.remove('hidden');$('reEntryConfirm').focus();}
+function previewReEntry(id){const p=state.players.find(x=>x.id===Number(id)&&!x.active);if(!p||state.tournamentType!=='Re-Entry')return;if(setupChangesPending()){$('setupRequiredModal').classList.remove('hidden');$('setupRequiredOK').focus();return;}if(!reEntryAllowed(p)){reEntryDialog('Re-Entry Limit Reached',`${p.name} has used all ${state.entryLimit} permitted re-entries and can no longer re-enter the tournament.`);return;}const spot=reEntrySpot();if(!spot){showNoSeatsModal();return;}reEntryDialog('Confirm Re-Entry',`${p.name} — ${tableDisplayName(spot.table)}, Seat ${spot.seat}. Re-entry ${reEntryUsed(p)+1}${state.entryOption==='Custom'?' of '+state.entryLimit:''}.`,{id:p.id,...spot});}
+function confirmReEntry(){const plan=pendingReEntry;closeReEntry();if(!plan)return;const p=state.players.find(x=>x.id===plan.id&&!x.active);if(!p||!reEntryAllowed(p)||setupChangesPending()||!tableIds().includes(plan.table)||plan.seat>seatsAt(plan.table)||occupied(plan.table,plan.seat)){reEntryDialog('Re-Entry Not Completed','The seating or tournament settings have changed. Please try again.');return;}p.active=true;p.table=plan.table;p.seat=plan.seat;p.entry=(Number(p.entry)||1)+1;delete p.bustedAt;delete p.bustOrder;state.history.push({action:'re-entry',id:p.id,name:p.name,table:p.table,seat:p.seat,entry:p.entry});proposed=null;proposedBalance=null;newTableProposal=null;for(const id of ['movePreview','balancePreview','newTablePreview'])$(id).innerHTML='';for(const id of ['confirmMoves','confirmBalance','confirmNewTableMoves'])$(id).disabled=true;msg(`${p.name} re-entered at ${tableDisplayName(p.table)}, Seat ${p.seat}.`);render();}
+$('reEntryConfirm').addEventListener('click',confirmReEntry);$('reEntryCancel').addEventListener('click',closeReEntry);$('reEntryModal').addEventListener('click',e=>{if(e.target===$('reEntryModal'))closeReEntry();});
+function renderBusted(){const list=$('bustedList'),bs=busted().sort((a,b)=>(Date.parse(b.bustedAt)||0)-(Date.parse(a.bustedAt)||0)||(Number(b.bustOrder)||0)-(Number(a.bustOrder)||0));if(!bs.length){list.innerHTML='<p class="small">No players have been eliminated yet.</p>';return;}list.innerHTML=bs.map(p=>`<div class="seat" style="margin-bottom:8px;flex-wrap:wrap"><span class="seat-name">${esc(p.name)} <span class="small">· previously T${p.table} S${p.seat}</span></span><div style="display:flex;gap:6px;min-width:230px;flex:1"><select aria-label="Restore ${esc(p.name)} to table" id="restoreTable-${p.id}">${tableIds().map(t=>`<option value="${t}">Table ${t}</option>`).join('')}</select><select aria-label="Restore ${esc(p.name)} to seat" id="restoreSeat-${p.id}"></select><button class="primary" data-restore="${p.id}">Restore</button>${state.tournamentType==='Re-Entry'?`<button class="primary" data-reentry="${p.id}">Re-Entry</button>`:''}</div></div>`).join('');bs.forEach(p=>{const tableEl=$(`restoreTable-${p.id}`);tableEl.value=String(tableIds().includes(p.table)?p.table:tableIds()[0]);refreshRestoreSeats(p.id,p.seat);tableEl.addEventListener('change',()=>refreshRestoreSeats(p.id));$(`restoreSeat-${p.id}`).addEventListener('change',()=>{});});list.querySelectorAll('[data-reentry]').forEach(btn=>btn.addEventListener('click',()=>previewReEntry(btn.dataset.reentry)));list.querySelectorAll('[data-restore]').forEach(btn=>btn.addEventListener('click',()=>restorePlayer(btn.dataset.restore))); 
 }
  $('restoreOriginalCancel').addEventListener('click',closeRestoreOriginalModal);
  $('restoreOriginalConfirm').addEventListener('click',confirmRestoreOriginal);
@@ -715,20 +850,35 @@ $('setupRequiredOK').addEventListener('click',()=>{$('setupRequiredModal').class
 $('noSeatsOK').addEventListener('click',()=>{$('noSeatsModal').classList.add('hidden');$('playerName').focus();});
 $('registerForm').addEventListener('submit',async e=>{e.preventDefault();const input=$('playerName');if(await addPlayer(capitalisePlayerName(input.value))){input.value='';}if($('setupRequiredModal').classList.contains('hidden'))input.focus();});
 $('duplicatePlayerCancel').addEventListener('click',()=>closeDuplicatePlayerModal(false)); $('duplicatePlayerContinue').addEventListener('click',()=>closeDuplicatePlayerModal(true)); $('duplicatePlayerModal').addEventListener('click',e=>{if(e.target===$('duplicatePlayerModal'))closeDuplicatePlayerModal(false);}); $('editPlayerForm').addEventListener('submit',e=>{e.preventDefault();saveEditedPlayerName();}); $('editPlayerInput').addEventListener('input',e=>{const input=e.target;const start=input.selectionStart;const end=input.selectionEnd;const formatted=capitalisePlayerName(input.value);if(formatted!==input.value){input.value=formatted;input.setSelectionRange(start,end);}});
+$('editNameChoice').addEventListener('click',showEditNameForm);
+$('undoTopChoice').addEventListener('click',previewUndoTop);
+$('undoReBuyChoice').addEventListener('click',previewUndoReBuy);
+$('undoReBuyConfirm').addEventListener('click',confirmUndoReBuy);
+$('undoReBuyCancel').addEventListener('click',()=>editPlayerName(editingPlayerId));
+$('editChoiceCancel').addEventListener('click',()=>closeEditPlayerModal());
 $('editPlayerCancel').addEventListener('click',()=>closeEditPlayerModal());
 $('editPlayerModal').addEventListener('click',e=>{if(e.target===$('editPlayerModal'))closeEditPlayerModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('editPlayerModal').classList.contains('hidden'))closeEditPlayerModal();});
 $('applySetup').addEventListener('click',applySetup);$('prepareBalance').addEventListener('click',prepareBalance);$('confirmBalance').addEventListener('click',confirmBalance);$('cancelBalance').addEventListener('click',cancelBalance);$('balanceSource').addEventListener('change',()=>{refreshBalancePlayers();proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;});$('balancePlayer').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;});$('balanceTarget').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;refreshBalanceSeats();});$('balanceSeat').addEventListener('change',()=>{proposedBalance=null;$('balancePreview').innerHTML='';$('confirmBalance').disabled=true;});$('prepareMoves').addEventListener('click',prepareMoves);$('confirmMoves').addEventListener('click',confirmMoves);$('cancelMoves').addEventListener('click',cancelMoves);
 $('breakTable').addEventListener('change',()=>{proposed=null;$('movePreview').innerHTML='';$('confirmMoves').disabled=true;renderBreak();});
 $('toggleBusted').addEventListener('click',()=>{const l=$('bustedList'),hidden=l.classList.toggle('hidden');$('toggleBusted').textContent=hidden?'Show list':'Hide list';});
-$('exportCsv').addEventListener('click',()=>{const rows=[['Name','Status','Table','Seat','Entry'],...state.players.map(p=>[p.name,p.active?'Active':'Eliminated',p.table,p.seat,p.entry||1])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='poker-player-list.csv';a.click();URL.revokeObjectURL(a.href);});
+function exportPlayerOrder(){return [...active(),...busted().sort((a,b)=>(Date.parse(b.bustedAt)||0)-(Date.parse(a.bustedAt)||0)||(Number(b.bustOrder)||0)-(Number(a.bustOrder)||0))];}
+$('exportCsv').addEventListener('click',()=>{const rows=[['Name','Status','Table','Seat','Entry',...(isReBuyType(state.tournamentType)?['Re-Buys']:[]),...(hasTopUps()?['Top-Ups']:[])],...exportPlayerOrder().map(p=>[p.name,p.active?'Active':'Eliminated',p.table,p.seat,p.entry||1,...(isReBuyType(state.tournamentType)?[reBuyUsed(p)]:[]),...(hasTopUps()?[topUsed(p)]:[])])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='poker-player-list.csv';a.click();URL.revokeObjectURL(a.href);});
 $('closeEmptyTableCancel').addEventListener('click',dismissCloseEmptyTableModal);$('closeEmptyTableConfirm').addEventListener('click',confirmCloseEmptyTable);$('closeEmptyTableModal').addEventListener('click',e=>{if(e.target===$('closeEmptyTableModal'))dismissCloseEmptyTableModal();});$('openTableBtn').addEventListener('click',openAdditionalTable);$('closeEmptyNewTableBtn').addEventListener('click',closeEmptyNewTable);$('newTableSource').addEventListener('change',changeNewTableSource);$('finishNewTableMoves').addEventListener('click',finishNewTableMoves);$('previewNewTableMoves').addEventListener('click',previewNewTableMoves);$('confirmNewTableMoves').addEventListener('click',confirmNewTableMoves);$('cancelNewTableMoves').addEventListener('click',cancelNewTableMoves);
 function dismissResetTournamentModal(){$('resetTournamentModal').classList.add('hidden');}
 $('reset').addEventListener('click',()=>{$('resetTournamentModal').classList.remove('hidden');$('resetTournamentCancel').focus();});
 $('resetTournamentCancel').addEventListener('click',dismissResetTournamentModal);
 $('resetTournamentModal').addEventListener('click',e=>{if(e.target===$('resetTournamentModal'))dismissResetTournamentModal();});
-$('resetTournamentConfirm').addEventListener('click',()=>{dismissResetTournamentModal();newTableOpened=false;newTableTarget=null;newTableSource=null;newTableMovedCount=0;newTableProposal=null;lastBustMessage='';state={configuredTables:1,activeTables:1,seatsPerTable:9,tableSeatCounts:{},name:'',players:[],nextId:1,closedTables:[],tableIds:[1],tableOrder:[1],nextTableNumber:2,finalTableId:null,history:[]};proposed=null;initControls();msg('Tournament reset. Ready for a new event.');render();});
+$('resetTournamentConfirm').addEventListener('click',()=>{dismissResetTournamentModal();newTableOpened=false;newTableTarget=null;newTableSource=null;newTableMovedCount=0;newTableProposal=null;lastBustMessage='';state={configuredTables:1,activeTables:1,seatsPerTable:9,finalTableSeats:null,tournamentType:"Re-Entry",entryOption:"Unlimited",entryLimit:2,topOption:"Unlimited",topLimit:2,tableSeatCounts:{},name:'',players:[],nextId:1,closedTables:[],tableIds:[1],tableOrder:[1],nextTableNumber:2,finalTableId:null,history:[]};proposed=null;initControls();msg('Tournament reset. Ready for a new event.');render();});
+$('tournamentType').addEventListener('change',updateEntryControls);$('entryOption').addEventListener('change',updateEntryControls);
+$('topOption').addEventListener('change',updateEntryControls);
 load();syncTables();initControls();render();
+window.addEventListener('resize',scheduleSeatNameFit);
+if(typeof ResizeObserver!=='undefined'){
+ const nameFitObserver=new ResizeObserver(scheduleSeatNameFit);
+ nameFitObserver.observe($('tableGrid'));
+}
+if(document.fonts)document.fonts.ready.then(scheduleSeatNameFit);
 if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(err => console.warn('Offline support registration failed', err))); }
 })();
 </script>
